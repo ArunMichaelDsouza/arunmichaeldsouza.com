@@ -1,0 +1,23 @@
+{
+  "name": "arunmichaeldsouza.com",
+  "version": "1.0.0",
+  "description": "My Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArunMichaelDsouza/arunmichaeldsouza.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArunMichaelDsouza/arunmichaeldsouza.com/issues"
+  },
+  "homepage": "https://github.com/ArunMichaelDsouza/arunmichaeldsouza.com#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "pug": "^2.0.0-rc.3"
+  }
+}
