@@ -1,0 +1,24 @@
+// Base styles
+
+html,
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.primary-title {
+	font-weight: 700;
+	color: $textDark;
+	font-size: 1.5em;
+}
+
+.primary-text {
+	font-weight: 400;
+	color: $textLight;
+	font-size: 1em;
+	line-height: 1.5em;
+}
