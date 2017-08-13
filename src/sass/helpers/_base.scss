@@ -12,17 +12,21 @@ body {
 
 .primary-title {
 	font-weight: 700;
-	color: $textDark;
+	color: $black;
 	font-size: 1.5em;
 }
 
 .primary-text {
 	font-weight: 400;
-	color: $textLight;
+	color: $grey;
 	font-size: 1em;
 	line-height: 1.5em;
 }
 
 .no-td {
 	text-decoration: none;
+}
+
+a {
+	color: $blue;
 }
