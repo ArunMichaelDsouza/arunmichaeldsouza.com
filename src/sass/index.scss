@@ -6,12 +6,26 @@
 
 .intro-section {
 	margin: 50px 0 0;
+	padding: 0 25px;
 }
 
 .main-img {
 	width: 180px;
 	height: 180px;
 	border-radius: 50%;
+}
+
+.intro-text {
+	width: 40%;
+	margin: 0 auto 20px;
+
+	@media screen and (max-width: $tabletWidth) {
+		width: 100%;
+	}
+
+	a {
+		margin: 0 7px;
+	}
 }
 
 // html,
