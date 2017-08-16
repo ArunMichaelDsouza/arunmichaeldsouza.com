@@ -19,7 +19,7 @@
   "dependencies": {
     "express": "^4.15.3",
     "pug": "^2.0.0-rc.3",
-    "woodlot": "^3.0.5"
+    "woodlot": "^3.1.5"
   },
   "devDependencies": {
     "css-loader": "^0.28.4",
