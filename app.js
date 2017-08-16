@@ -11,7 +11,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(woodlot({
-    streams: ['./logs/app.log']
+    streams: ['./logs/app.log'],
+    stdout: true,
+    userAnalytics: {
+        platform: true,
+        country: true
+    },
 }));
 
 app.get('/', (req, res) => res.render('index'));
