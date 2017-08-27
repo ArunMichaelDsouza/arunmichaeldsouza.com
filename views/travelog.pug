@@ -1,0 +1,27 @@
+//- Travelog page template
+
+extends helpers/base
+
+block title
+	- var title = "Arun Michael Dsouza's Travelog"
+	- var key = locals.constants.GOOGLE.API_KEY
+
+block append head
+	script(async src="https://maps.googleapis.com/maps/api/js?key="+key+"&callback=initMap")
+
+block append css
+	link(rel="stylesheet" href="css/travelog.min.css")
+
+block body
+	main
+		div#travlog-map.travelog-map
+	script.
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('travlog-map'), {
+				center: { lat: -34.397, lng: 150.644 },
+				zoom: 8
+			});
+		};
+	script(src="js/travelog.min.js")
+		   
+
