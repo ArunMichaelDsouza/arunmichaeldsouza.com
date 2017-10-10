@@ -5,6 +5,9 @@ extends helpers/base
 block title
 	- var title = "Arun Michael Dsouza's Travelog"
 	- var key = locals.constants.GOOGLE.API_KEY
+	- var headerTitle = 'Arun Michael Dsouza\'s Travelog'
+	- var centerLat = 38.745460
+	- var centerLng = 51.102932
 
 block append head
 	script(async src="https://maps.googleapis.com/maps/api/js?key="+key+"&callback=initMap")
@@ -14,13 +17,24 @@ block append css
 
 block body
 	main
+		include helpers/header
 		div#travlog-map.travelog-map
 	script.
-		function initMap() {
-			map = new google.maps.Map(document.getElementById('travlog-map'), {
-				center: { lat: -34.397, lng: 150.644 },
-				zoom: 8
+		function initMap() {	
+			var map = document.getElementById('travlog-map');
+
+			map = new google.maps.Map(map, {
+				center: { lat: #{centerLat}, lng: #{centerLng} },
+				zoom: 3
 			});
+
+			var marker = new google.maps.Marker({
+			    position: { lat: 51.209348, lng: 3.2247 },
+			    title:"Hello World!"
+			});
+
+			// To add the marker to the map, call setMap();
+			marker.setMap(map);
 		};
 	script(src="js/travelog.min.js")
 		   
