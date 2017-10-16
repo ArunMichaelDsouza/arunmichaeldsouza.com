@@ -2,7 +2,7 @@
 
 html,
 body {
-	font-family: sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 16px;
 }
 
@@ -10,23 +10,59 @@ body {
 	text-align: center;
 }
 
-.primary-title {
+.text-left {
+	text-align: left;
+}
+
+%title {
 	font-weight: 700;
 	color: $black;
+}
+
+%text {
+	font-weight: 400;
+	color: $grey;
+	line-height: 1.5em;
+}
+
+.primary-title {
+	@extend %title;
 	font-size: 1.5em;
 }
 
 .primary-text {
-	font-weight: 400;
-	color: $grey;
+	@extend %text;
 	font-size: 1em;
-	line-height: 1.5em;
+}
+
+.secondary-title {
+	@extend %title;
+	font-size: 1.2em;
+	color: darken($grey, 7%);
+	padding-bottom: 15px;
+	border-bottom: 1px solid lighten($grey, 40%);
+}
+
+.secondary-text {
+	@extend %text;
+	font-size: 1em;
 }
 
 .no-td {
 	text-decoration: none;
 }
 
+.ul-reset {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
 a {
 	color: $blue;
+	text-decoration: none;
+
+	&:hover {
+		cursor: pointer;
+	}
 }

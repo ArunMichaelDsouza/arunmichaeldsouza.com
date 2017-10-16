@@ -4,9 +4,18 @@
 @import './helpers/variables';
 @import './helpers/base';
 
-.intro-section {
+.main-wrapper {
 	margin: 40px 0 0;
 	padding: 0 25px;
+}
+
+.content-wrapper {
+	width: 45%;
+	margin: 0 auto 60px;
+
+	@media screen and (max-width: $tabletWidth) {
+		width: 100%;
+	}
 }
 
 .main-img {
@@ -15,33 +24,15 @@
 	border-radius: 50%;
 }
 
-.intro-text {
-	width: 40%;
-	margin: 0 auto 20px;
-
-	@media screen and (max-width: $tabletWidth) {
-		width: 100%;
-	}
-
+.intro-text,
+.talks-links {
 	a {
-		margin: 0 7px;
+		margin: 0 7px 0 0;
 	}
 }
 
-// html,
-// 			body {
-// 				font-family: sans-serif;
-// 			}
-// 			main {
-// 				text-align: center;
-// 				padding: 10px;
-// 			}
-// 			h1 {
-// 				font-weight: 300;
-// 				color: #2a2a2a;
-// 				margin: 120px 0 40px;
-// 			}
-// 			a {
-// 				color: #00a0e3;
-// 				margin: 0 10px;
-// 			}
+.talks-list {
+	li {
+		margin-bottom: 15px;
+	}
+}

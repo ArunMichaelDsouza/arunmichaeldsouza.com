@@ -9,14 +9,32 @@ block append css
 	link(rel="stylesheet" href="css/index.min.css")
 
 block body
-	main
-		section.intro-section.text-center
+	main.main-wrapper
+		section.content-wrapper.text-center
 			a.no-td(href="/")
-				img.main-img(src="img/arun-michael-dsouza.jpg")
+				img.main-img(src="img/arun-michael-dsouza.jpg" alt="Arun Michael Dsouza's image")
 				h1.primary-title Arun Michael Dsouza
 			div.primary-text.intro-text
 				p.
-					I'm a Technology Enthusiast, an Open Source Lover and Contributor. I play drums (sometimes), I love to travel and play video games. 
+					I'm a Technology Enthusiast, an Open Source Lover and Contributor. I play drums (sometimes), I love to travel and play video games.
 				a(target="_blank" href="http://bit.ly/website-github") GitHub
 				a(target="_blank" href="http://bit.ly/website-twitter") Twitter
 				a(target="_blank" href="http://bit.ly/website-behance") Behance
+		section.content-wrapper.text-left
+			h2.secondary-title Work
+			div.secondary-text
+				| Currently working on Header Bidding and Ad Layout Optimisation Technology at 
+				a(href="https://www.adpushup.com/" target="_blank") AdPushup Inc.
+		section.content-wrapper.text-left
+			h2.secondary-title Talks / Presentations
+			div.secondary-text
+				ul.ul-reset.talks-list
+					li Getting Started with React 16 
+						div.talks-links
+							a(href="http://bit.ly/getting-started-with-react-16" target="_blank") Slides
+					li The Era of Module Bundlers - 
+						a(href="http://bit.ly/jsconf-be-2017" target="_blank") JSConf Belgium 2017
+						div.talks-links
+							a(href="http://bit.ly/2sKN8Fl" target="_blank") Video
+							a(href="http://bit.ly/The-era-of-module-bundlers-speakerdeck" target="_blank") Slides
+				
