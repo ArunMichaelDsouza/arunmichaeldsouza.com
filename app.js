@@ -4,7 +4,8 @@ const express = require('express'),
 	app = express(),
 	constants = require('./lib/constants'),
 	path = require('path'),
-	woodlot = require('woodlot').middlewareLogger;
+	woodlot = require('woodlot').middlewareLogger,
+    data = require('./data');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +22,11 @@ app.use(woodlot({
     },
 }));
 
-app.get('/', (req, res) => res.render('index'));
+app.get('/', (req, res) => {
+    console.log(data.talks.length);
+    res.render('index', {
+    talks: data.talks
+})});
 
 app.get('/travelog', (req, res) => res.render('travelog'));
 
