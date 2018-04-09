@@ -3,7 +3,7 @@ module.exports = {
 		title: 'Houdini, what lies ahead',
 		urls: {
 			slides: 'https://speakerdeck.com/arunmichaeldsouza/houdini-what-lies-ahead-jsconf-iceland-2018',
-			video: 'https://www.youtube.com/watch?v=3Nv9muOkb6k&t=5610s'
+			video: 'https://www.youtube.com/watch?v=BalUlHBwwlM'
 		},
 		location: 'Reykjavik, Iceland',
 		event: {
