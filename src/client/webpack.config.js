@@ -15,8 +15,8 @@ const mapAssetsToEntryPoints = assets => {
         let entryArray = []
         entries[asset] = entryArray;
 
-        entryArray.push(path.join(__dirname, `src/js/${asset}.js`));
-        entryArray.push(path.join(__dirname, `src/sass/${asset}.scss`));
+        entryArray.push(path.join(__dirname, `js/${asset}.js`));
+        entryArray.push(path.join(__dirname, `sass/${asset}.scss`));
     });
 
     return entries;
@@ -34,13 +34,13 @@ module.exports = {
         loaders: [{
             test: /\.scss?$/,
             use: ExtractTextPlugin.extract({
-                use: [{ 
-                    loader: 'css-loader', 
-                    options: { 
-                        minimize: true 
+                use: [{
+                    loader: 'css-loader',
+                    options: {
+                        minimize: true
                     }
-                }, { 
-                    loader: 'sass-loader' 
+                }, {
+                    loader: 'sass-loader'
                 }]
             })
         }]
