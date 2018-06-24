@@ -1,10 +1,18 @@
 // Webapp server
 
+require('dotenv/config');
+
 const express = require('express'),
     app = express(),
+    db = require('./lib/db'),
     constants = require('./lib/constants'),
     path = require('path'),
-    woodlot = require('woodlot').middlewareLogger;
+    woodlot = require('woodlot').middlewareLogger,
+    startServer = () => {
+        return app.listen(process.env.PORT, () => {
+            console.log(`Server running on port : ${process.env.PORT}`);
+        });
+    };
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +35,10 @@ app.get('/', (req, res) => {
 
 app.get('/travelog', (req, res) => res.render('travelog'));
 
-app.listen(constants.PORT, () => {
-    console.log(`Server running on port : ${constants.PORT}`)
+db.on('error', () => {
+    console.log('Error connecting to MongoDB');
+});
+db.once('open', () => {
+    console.log('Successfully connected to MongoDB');
+    return startServer();
 });
