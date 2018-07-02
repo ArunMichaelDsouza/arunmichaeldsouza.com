@@ -13,10 +13,7 @@ const express = require('express'),
         return app.listen(process.env.PORT, () => {
             console.log(`Server running on port : ${process.env.PORT}`);
         });
-    },
-    cmsLoggedIn = (id, password) => {
-        return (id === 'amd' && password === '19042009') ? true : false;
-    }
+    };
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
@@ -39,25 +36,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
-app.get('/', (req, res) => res.render('index'));
-
-app.get('/cms', (req, res) => {
-    const { loggedIn } = req.session;
-
-    return res.render('cms', { loggedIn });
-});
-
-app.post('/cms', (req, res) => {
-    const { id, password } = req.body;
-
-    if (cmsLoggedIn(id, password)) {
-        req.session.loggedIn = true;
-    }
-
-    return res.redirect('/cms');
-});
-
-app.get('/travelog', (req, res) => res.render('travelog'));
+require('./lib/router')(app);
 
 db.on('error', () => {
     console.log('Error connecting to MongoDB');
