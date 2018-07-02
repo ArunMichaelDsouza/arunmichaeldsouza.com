@@ -3,12 +3,15 @@
 extends helpers/base
 
 block title
-	- var title = "Admin Panel"
-	- var subTitle = "Explore the places I've travelled to."
+	- var title = "CMS"
+	- var subTitle = "Login to the content management system"
+
+block append meta
+	meta(name="robots" content="noindex")
 
 block append css
 	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/CSS-Mint/2.0.6/css-mint.min.css")
-	link(rel="stylesheet" href="css/admin.min.css")
+	link(rel="stylesheet" href="css/cms.min.css")
 
 block body
 	main
