@@ -5,7 +5,7 @@ const webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Map of asset entries for all pages
-const assetEntries = ['index', 'travelog'];
+const assetEntries = ['index', 'travelog', 'admin'];
 
 // Function to create module entries for assets of all pages
 const mapAssetsToEntryPoints = assets => {
@@ -26,7 +26,7 @@ module.exports = {
     entry: mapAssetsToEntryPoints(assetEntries),
 
     output: {
-        path: path.join(__dirname, 'public/js/'),
+        path: path.join(__dirname, '../server/public/js/'),
         filename: '[name].min.js'
     },
 

@@ -6,7 +6,8 @@
   "scripts": {
     "webpack": "cd ./src/client && webpack",
     "webpack-watch": "cd ./src/client && webpack --watch",
-    "server": "node ./src/server/app.js"
+    "server": "node ./src/server/app.js",
+    "server-watch": "./node_modules/.bin/nodemon ./src/server/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,11 @@
   },
   "homepage": "https://github.com/ArunMichaelDsouza/arunmichaeldsouza.com#readme",
   "dependencies": {
+    "css-mint": "^2.0.6",
     "dotenv": "^6.0.0",
     "express": "^4.15.3",
     "mongoose": "^5.1.6",
+    "nodemon": "^1.17.5",
     "pug": "^2.0.0-rc.3",
     "woodlot": "^3.1.6"
   },

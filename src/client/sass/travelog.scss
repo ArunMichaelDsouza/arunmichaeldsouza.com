@@ -3,31 +3,10 @@
 @import './helpers/normalize';
 @import './helpers/variables';
 @import './helpers/base';
+@import './components/header';
 
 .travelog-map {
 	width: 100%;
 	height: 480px;
 	background-color: #ddd;
-}
-
-.header {
-	margin: 40px 0;
-    padding: 0 25px;
-}
-
-.primary-title {
-    font-weight: 700;
-    font-size: 1.5em;
-
-    a {
-    	text-decoration: none;
-    	color: #1e1e1e;
-    }
-}
-
-.primary-text {
-    font-weight: 400;
-    color: #585858;
-    font-size: 1em;
-    line-height: 1.5em;
 }

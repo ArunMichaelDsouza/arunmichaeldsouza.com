@@ -1,0 +1,15 @@
+//- Admin page template
+
+extends helpers/base
+
+block title
+	- var title = "Admin Panel"
+	- var subTitle = "Explore the places I've travelled to."
+
+block append css
+	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/CSS-Mint/2.0.6/css-mint.min.css")
+	link(rel="stylesheet" href="css/admin.min.css")
+
+block body
+	main
+		include helpers/header
