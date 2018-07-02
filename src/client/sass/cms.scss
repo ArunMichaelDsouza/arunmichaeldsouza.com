@@ -4,3 +4,22 @@
 @import './helpers/variables';
 @import './helpers/base';
 @import './components/header';
+
+html,
+body {
+    background-color: #f3f5f7;
+}
+
+.card-bg {
+    background-color: #fff;
+}
+
+.input-box {
+    & > input,
+    & > button {
+        width: 100%;
+    }
+    & > input {
+        margin-bottom: 15px;
+    }
+}
