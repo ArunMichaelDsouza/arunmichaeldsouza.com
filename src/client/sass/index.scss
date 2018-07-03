@@ -3,6 +3,7 @@
 @import './helpers/normalize';
 @import './helpers/variables';
 @import './helpers/base';
+@import './components/talks';
 
 .main-wrapper {
 	margin: 40px 0 0;
@@ -28,20 +29,5 @@
 .talks-links {
 	a {
 		margin: 0 7px 0 0;
-	}
-}
-
-.talks-list {
-	li {
-		margin-bottom: 15px;
-		padding-bottom: 15px;
-		border-bottom: 1px solid lighten($grey, 55%);
-	}
-}
-
-.location {
-	img {
-		vertical-align: middle;
-		margin-right: 5px;
 	}
 }

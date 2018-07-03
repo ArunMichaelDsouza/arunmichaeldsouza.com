@@ -1,0 +1,16 @@
+// Talks list styles
+
+.talks-list {
+	li {
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		border-bottom: 1px solid lighten($grey, 55%);
+	}
+}
+
+.location {
+	img {
+		vertical-align: middle;
+		margin-right: 5px;
+	}
+}

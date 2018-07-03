@@ -1,6 +1,7 @@
 // CMS controller
 
 const router = require('express').Router({ mergeParams: false }),
+    Talk = require('../models/Talk'),
     cmsLoggedIn = (id, password) => {
         return (id === process.env.CMS_ID && password === process.env.CMS_PASSWORD) ? true : false;
     };
@@ -24,6 +25,31 @@ router
         req.session.destroy(() => {
             return res.redirect('/cms');
         });
+    })
+    .get('/talks', (req, res) => {
+        const { loggedIn } = req.session;
+
+        if (loggedIn) {
+            return Talk.find().sort({ eventDate: -1 })
+                .then(talks => res.render('cms/talks', { talks }))
+                .catch(err => res.status(500).send('Some error occurred'));
+        }
+
+        return res.redirect('/cms');
+    })
+    .post('/talks', (req, res) => {
+        const { title, slidesUrl, videoUrl, location, eventName, eventUrl, eventDate } = req.body;
+
+        return Talk.create({ title, slidesUrl, videoUrl, location, eventName, eventUrl, eventDate })
+            .then(talk => res.redirect('/cms/talks'))
+            .catch(err => res.status(500).send('Some error occurred'));
+    })
+    .post('/talks/delete', (req, res) => {
+        const { id } = req.body;
+
+        return Talk.findByIdAndRemove(id)
+            .then(() => res.redirect('/cms/talks'))
+            .catch(err => res.status(500).send('Some error occurred'));
     })
 
 module.exports = router;
