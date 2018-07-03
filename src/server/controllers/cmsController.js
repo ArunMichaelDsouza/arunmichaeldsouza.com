@@ -10,7 +10,9 @@ router
     .get('/', (req, res) => {
         const { loggedIn } = req.session;
 
-        return res.render('cms/index', { loggedIn });
+        return Talk.find().sort({ eventDate: -1 })
+            .then(talks => res.render('cms/index', { loggedIn, talks: talks.length }))
+            .catch(err => res.status(500).send('Some error occurred'));
     })
     .post('/', (req, res) => {
         const { id, password } = req.body;
