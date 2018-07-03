@@ -1,0 +1,34 @@
+//- CMS panel template
+
+block title
+	- var title = "CMS"
+	- var subTitle = "Adjust content for the website from this panel"
+
+include ../helpers/header
+
+.cm-grid
+	.cm-row
+		.cm-col-md-12
+			.cm-text-right
+				a.cm-btn.error(href="/cms/logout" style="margin-bottom: 30px; display: inline-block;") Logout
+		.cm-col-md-4
+			.cm-card
+				.cm-card-body.card-bg
+					span.cm-text-large.cm-text-bold 4 
+					span Blog post(s)
+					br
+					a.cm-btn.primary(style="display: inline-block; margin-top: 15px;" href="/cms/blog-posts") Manage blog posts
+		.cm-col-md-4
+			.cm-card
+				.cm-card-body.card-bg
+					span.cm-text-large.cm-text-bold 1 
+					span talk(s)
+					br
+					a.cm-btn.primary(style="display: inline-block; margin-top: 15px;" href="/cms/talks") Manage talks
+		.cm-col-md-4
+			.cm-card
+				.cm-card-body.card-bg
+					span.cm-text-large.cm-text-bold 2 
+					span Travelog location(s)
+					br
+					a.cm-btn.primary(style="display: inline-block; margin-top: 15px;" href="/cms/travelog") Manage travelog

@@ -1,6 +1,6 @@
 //- Admin page template
 
-extends helpers/base
+extends ../helpers/base
 
 block title
 	- var title = "CMS"
@@ -16,7 +16,7 @@ block append css
 block body
 	main
 		if !loggedIn
-			include helpers/header
+			include ../helpers/header
 			.cm-grid
 				.cm-row
 					.cm-col-md-4.cm-col-md-offset-4
@@ -25,13 +25,14 @@ block body
 							.cm-card-body
 								form(method="post" action="/cms")
 									.input-box
-										input(type="text" placeholder="Enter Id" name="id")
+										input(type="text" placeholder="Enter Id" name="id" required)
 									.input-box
-										input(type="password" placeholder="Enter Password" name="password")
+										input(type="password" placeholder="Enter Password" name="password" required)
 									.input-box
 										button.cm-btn.primary Login
 		else
-
+			include panel
+			
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js")
 	script(src="/js/cms.min.js")
 

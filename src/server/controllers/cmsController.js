@@ -9,7 +9,7 @@ router
     .get('/', (req, res) => {
         const { loggedIn } = req.session;
 
-        return res.render('cms', { loggedIn });
+        return res.render('cms/index', { loggedIn });
     })
     .post('/', (req, res) => {
         const { id, password } = req.body;
@@ -19,6 +19,11 @@ router
         }
 
         return res.redirect('/cms');
-    });
+    })
+    .get('/logout', (req, res) => {
+        req.session.destroy(() => {
+            return res.redirect('/cms');
+        });
+    })
 
 module.exports = router;

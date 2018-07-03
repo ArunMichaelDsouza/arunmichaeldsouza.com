@@ -1,0 +1,23 @@
+//- Talks menu template
+
+.cm-grid
+	.cm-row
+		.cm-col-md-4
+			.cm-card.card-bg
+				.cm-card-header Add a talk
+				.cm-card-body
+					form
+						.input-box
+							input(type="text" placeholder="Title" name="title" required)
+						.input-box
+							input(type="url" placeholder="Slides URL" name="slidesUrl" required)
+						.input-box
+							input(type="url" placeholder="Video URL" name="videoUrl")
+						.input-box
+							input(type="text" placeholder="Location" name="location" required)
+						.input-box
+							input(type="text" placeholder="Event name" name="eventName")
+						.input-box
+							input(type="url" placeholder="Event URL" name="eventUrl")
+						.input-box
+							button.cm-btn.primary Add talk
