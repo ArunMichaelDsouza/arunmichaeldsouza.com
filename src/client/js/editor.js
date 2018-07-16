@@ -4,6 +4,7 @@ const config = require('./config')
 const MediumEditor = require('medium-editor');
 const $ = require('jquery');
 require('medium-editor-insert-plugin')($);
+require('medium-editor-custom-html');
 const EmbedButtonExtension = require('medium-editor-embed-button/src/js/medium-editor-embed-button');
 
 const editor = new MediumEditor('.editor', {
@@ -11,8 +12,12 @@ const editor = new MediumEditor('.editor', {
     extensions: {
         embedButton: new EmbedButtonExtension({
             embedOpts: {
-                oembedProxy: `https://iframe.ly/api/oembed?api_key=${config.OEMBED_API_KEY}&url=`
+                oembedProxy: 'https://iframe.ly/api/oembed?api_key=' + config.OEMBED_API_KEY + '&url='
             }
+        }),
+        customHtml: new CustomHtml({
+            buttonText: '<hr/>',
+            htmlToInsert: '<hr/>'
         })
     },
     toolbar: {
@@ -34,7 +39,8 @@ const editor = new MediumEditor('.editor', {
             'justifyRight',
             'justifyFull',
             'removeFormat',
-            'embedButton'
+            'embedButton',
+            'customHtml'
         ]
     }
 });
