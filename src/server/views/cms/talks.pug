@@ -13,14 +13,17 @@ block append css
 	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/CSS-Mint/2.0.6/css-mint.min.css")
 	link(rel="stylesheet" href="/css/cms.min.css")
 	style.
-		.talks-list > li {
+		.item-list > li {
 			background-color: #eee;
 			padding: 15px;
 			border-radius: 3px;
+			margin-bottom: 15px;
 		}
 
 block body
 	include ../helpers/header
+	.cm-text-center
+		a(href="javascript:window.history.back()") Go back
 	.cm-grid
 		.cm-row
 			include logout
@@ -49,18 +52,18 @@ block body
 				.cm-card.card-bg
 					.cm-card-header All talks
 					.cm-card-body
-						ul.ul-reset.talks-list
+						ul.ul-reset.item-list
 							each talk in talks
 								li #{talk.title}
 									if talk.eventName
 										|  - 
 										a(href=talk.eventUrl target="_blank") #{talk.eventName}
-									.talks-links
+									div
 										if talk.videoUrl
 											a(href=talk.videoUrl target="_blank" style="margin-right: 7px;") Video
 										if talk.slidesUrl
 											a(href=talk.slidesUrl target="_blank") Slides
-									.location
+									div
 										img.icon-location(src="/img/location.png") 
 										span #{talk.location}
 									div(style="margin-top: 15px;")
