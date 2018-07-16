@@ -2,6 +2,7 @@
 
 const router = require('express').Router({ mergeParams: false }),
     Talk = require('../models/Talk'),
+    Blog = require('../models/Blog'),
     cmsLoggedIn = (id, password) => {
         return (id === process.env.CMS_ID && password === process.env.CMS_PASSWORD) ? true : false;
     };
@@ -39,13 +40,6 @@ router
 
         return res.redirect('/cms');
     })
-    .post('/talks', (req, res) => {
-        const { title, slidesUrl, videoUrl, location, eventName, eventUrl, eventDate } = req.body;
-
-        return Talk.create({ title, slidesUrl, videoUrl, location, eventName, eventUrl, eventDate })
-            .then(talk => res.redirect('/cms/talks'))
-            .catch(err => res.status(500).send('Some error occurred'));
-    })
     .post('/talks/delete', (req, res) => {
         const { id } = req.body;
 
@@ -53,5 +47,25 @@ router
             .then(() => res.redirect('/cms/talks'))
             .catch(err => res.status(500).send('Some error occurred'));
     })
+    .get('/blogs', (req, res) => {
+        const { loggedIn } = req.session;
+
+        if (loggedIn) {
+            return Blog.find().sort({ eventDate: -1 })
+                .then(blogs => res.render('cms/blogs', { blogs }))
+                .catch(err => res.status(500).send('Some error occurred'));
+        }
+
+        return res.redirect('/cms');
+    })
+    .get('/blogs/editor', (req, res) => {
+        const { loggedIn } = req.session;
+
+        if (loggedIn) {
+            return res.render('cms/editor');
+        }
+
+        return res.redirect('/cms');
+    });
 
 module.exports = router;

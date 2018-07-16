@@ -5,7 +5,7 @@ const webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Map of asset entries for all pages
-const assetEntries = ['index', 'travelog', 'cms'];
+const assetEntries = ['index', 'travelog', 'cms', 'editor'];
 
 // Function to create module entries for assets of all pages
 const mapAssetsToEntryPoints = assets => {
@@ -31,19 +31,29 @@ module.exports = {
     },
 
     module: {
-        loaders: [{
-            test: /\.scss?$/,
-            use: ExtractTextPlugin.extract({
-                use: [{
-                    loader: 'css-loader',
-                    options: {
-                        minimize: true
-                    }
-                }, {
-                    loader: 'sass-loader'
-                }]
-            })
-        }]
+        loaders: [
+            {
+                test: /\.scss?$/,
+                use: ExtractTextPlugin.extract({
+                    use: [{
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true
+                        }
+                    }, {
+                        loader: 'sass-loader'
+                    }]
+                })
+            },
+            {
+                test: require.resolve('blueimp-file-upload'),
+                loader: 'imports-loader?define=>false'
+            },
+            {
+                test: require.resolve('medium-editor-insert-plugin'),
+                loader: 'imports-loader?define=>false'
+            }
+        ]
     },
 
     plugins: [

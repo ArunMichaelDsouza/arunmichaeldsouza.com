@@ -1,0 +1,42 @@
+//- Blog editor template
+
+extends ../helpers/base
+
+block title
+	- var title = "CMS - Blog Editor"
+	- var subTitle = "Create or edit a blog post"
+
+block append meta
+	meta(name="robots" content="noindex")
+
+block append css
+	link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/CSS-Mint/2.0.6/css-mint.min.css")
+	link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css")
+	link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css")
+	link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@5.23.3/dist/css/themes/default.min.css")
+	link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor-insert-plugin@2.5.0/dist/css/medium-editor-insert-plugin.min.css")
+	link(rel="stylesheet" href="/css/cms.min.css")
+	style.
+		.editor-card {
+			background-color: #fff;
+		}
+		.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-show {
+			margin-left: -52px;
+		}
+		.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-addons {
+			left: 0;
+		}
+
+block body
+	include ../helpers/header
+	.cm-text-center
+		a(href="javascript:window.history.back()") Go back
+	.cm-grid
+		.cm-row
+			include logout
+			.cm-col-md-10.cm-col-md-offset-1
+				.cm-card.editor-card
+					.cm-card-body
+						.editor
+
+	script(src="/js/editor.min.js")

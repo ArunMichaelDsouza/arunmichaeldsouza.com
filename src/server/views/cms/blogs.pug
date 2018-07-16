@@ -1,0 +1,41 @@
+//- Blogs menu template
+
+extends ../helpers/base
+
+block title
+	- var title = "CMS - Blogs"
+	- var subTitle = "Manage all the blogs"
+
+block append meta
+	meta(name="robots" content="noindex")
+
+block append css
+	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/CSS-Mint/2.0.6/css-mint.min.css")
+	link(rel="stylesheet" href="/css/cms.min.css")
+	style.
+		.item-list > li {
+			background-color: #eee;
+			padding: 15px;
+			border-radius: 3px;
+			margin-bottom: 15px;
+		}
+
+block body
+	include ../helpers/header
+	.cm-text-center
+		a(href="javascript:window.history.back()") Go back
+	.cm-grid
+		.cm-row
+			include logout
+			.cm-col-md-4
+				.cm-card.card-bg
+					.cm-card-header Add a blog
+					.cm-card-body
+						a(href="/cms/blogs/editor" style="display: inline-block;").cm-text-center.cm-btn.primary Go to editor
+			.cm-col-md-8
+				.cm-card.card-bg
+					.cm-card-header All blogs
+					.cm-card-body
+						ul.ul-reset.item-list
+							each blog in blogs
+								li
