@@ -26,6 +26,18 @@ block append css
 		.medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-addons {
 			left: 0;
 		}
+		.title {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		.btn-draft {
+			margin-right: 15px;
+			margin-bottom: 30px;
+		}
+		.btn-draft,
+		.btn-publish {
+			width: 200px;
+		}
 
 block body
 	include ../helpers/header
@@ -34,9 +46,15 @@ block body
 	.cm-grid
 		.cm-row
 			include logout
-			.cm-col-md-12
-				.cm-card.editor-card
-					.cm-card-body
-						.editor
+			form
+				.cm-col-12
+					input.title(type="text" placeholder="Enter blog title" required)
+				.cm-col-md-12
+					.cm-card.editor-card
+						.cm-card-body(style="padding: 60px;")
+							.editor
+				.cm-col-sm-5.cm-col-sm-offset-7.cm-text-right
+					button.cm-btn.primary.btn-draft Save draft
+					button.cm-btn.success.btn-publish Publish
 
 	script(src="/js/editor.min.js")

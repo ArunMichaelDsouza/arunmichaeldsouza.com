@@ -6,9 +6,17 @@ const mongoose = require('mongoose'),
             type: String,
             required: true
         },
+        content: {
+            type: String,
+            required: true
+        },
+        published: {
+            type: Boolean,
+            default: false
+        },
         blogDate: {
             type: Date,
-            required: true
+            default: new Date()
         },
     },
     Blog = mongoose.model('blog', blogSchema, 'blogs');
