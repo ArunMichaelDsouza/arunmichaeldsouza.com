@@ -6,17 +6,22 @@ const mongoose = require('mongoose'),
             type: String,
             required: true
         },
+        url: {
+            type: String,
+            required: true
+        },
         content: {
             type: String,
             required: true
         },
         published: {
             type: Boolean,
-            default: false
+            default: false,
+            required: true
         },
-        blogDate: {
+        date: {
             type: Date,
-            default: new Date()
+            required: true
         },
     },
     Blog = mongoose.model('blog', blogSchema, 'blogs');

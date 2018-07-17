@@ -52,4 +52,27 @@ $('.editor').mediumInsert({
 
 editor.setContent(defaultHtml, 0);
 
-window.editor = editor;
+$('#editor-form').submit(function (e) {
+    e.preventDefault();
+
+    const blogContent = editor.serialize()['element-0'].value;
+
+    if (!blogContent) {
+        alert('Blog content cannot be empty!');
+    } else {
+        const blogTitle = $(this).serializeArray()[0].value,
+            blogDate = $(this).serializeArray()[1].value;
+
+        $.post('/cms/blogs', {
+            title: blogTitle,
+            date: blogDate,
+            content: blogContent
+        }, function (res) {
+            if (res.success) {
+                alert('Blog action successful');
+            } else {
+                alert('Some error occurred');
+            }
+        });
+    }
+});
