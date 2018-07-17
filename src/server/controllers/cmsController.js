@@ -54,7 +54,7 @@ router
             .then(() => res.redirect('/cms/talks'))
             .catch(err => res.status(500).send('Some error occurred'));
     })
-    .get('/blog', (req, res) => {
+    .get('/blogs', (req, res) => {
         const { loggedIn } = req.session;
 
         if (loggedIn) {
@@ -75,9 +75,9 @@ router
         return res.redirect('/cms');
     })
     .post('/blogs', (req, res) => {
-        const { title, date, content } = req.body;
+        const { title, date, content, published } = req.body;
 
-        return Blog.create({ title, date: date ? date : new Date(), content, url: title.replace(/ /g, '-') })
+        return Blog.create({ title, date: date ? date : new Date(), content, url: title.replace(/ /g, '-'), published })
             .then(blog => res.send({ success: 1 }))
             .catch(err => res.status(500).send('Some error occurred'));
     });

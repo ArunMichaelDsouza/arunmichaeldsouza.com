@@ -55,19 +55,19 @@ block body
 	.cm-grid
 		.cm-row
 			include logout
-			form#editor-form
+			form
 				.cm-col-12
 					label Blog title
-					input.title(type="text" placeholder="Enter blog title" name="blogTitle" required)
+					input#title.title(type="text" placeholder="Enter blog title" name="blogTitle" required)
 					label Blog publish date (optional)
-					input(type="date" placeholder="Blog publish date (optional)" name="blogDate")
+					input#date(type="date" placeholder="Blog publish date (optional)" name="blogDate")
 				.cm-col-md-12
 					label Blog content
 					.cm-card.editor-card
 						.cm-card-body(style="padding: 60px;")
 							.editor
 				.cm-col-sm-5.cm-col-sm-offset-7.cm-text-right
-					button.cm-btn.primary.btn-draft Save draft
-					button.cm-btn.success.btn-publish Publish
+					button.cm-btn.primary.btn-draft.editor-btn(data-mode="draft") Save draft
+					button.cm-btn.success.btn-publish.editor-btn(data-mode="publish") Publish
 
 	script(src="/js/editor.min.js")

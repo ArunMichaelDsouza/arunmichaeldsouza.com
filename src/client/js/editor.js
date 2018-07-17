@@ -52,21 +52,21 @@ $('.editor').mediumInsert({
 
 editor.setContent(defaultHtml, 0);
 
-$('#editor-form').submit(function (e) {
+$('.editor-btn').click(function (e) {
     e.preventDefault();
+    const blogContent = editor.serialize()['element-0'].value,
+        blogTitle = $('#title').val(),
+        blogDate = $('#date').val(),
+        published = $(this).attr('data-mode');
 
-    const blogContent = editor.serialize()['element-0'].value;
-
-    if (!blogContent) {
-        alert('Blog content cannot be empty!');
+    if (!blogContent || !blogTitle) {
+        alert('Blog details are empty!');
     } else {
-        const blogTitle = $(this).serializeArray()[0].value,
-            blogDate = $(this).serializeArray()[1].value;
-
         $.post('/cms/blogs', {
             title: blogTitle,
             date: blogDate,
-            content: blogContent
+            content: blogContent,
+            published: published === 'draft' ? false : true
         }, function (res) {
             if (res.success) {
                 alert('Blog action successful');
