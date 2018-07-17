@@ -19,6 +19,10 @@ block append css
 			border-radius: 3px;
 			margin-bottom: 15px;
 		}
+		form {
+			display: inline-block;
+			margin-left: 15px;
+		}
 
 block body
 	include ../helpers/header
@@ -38,4 +42,22 @@ block body
 					.cm-card-body
 						ul.ul-reset.item-list
 							each blog in blogs
-								li
+								li 
+									h2 #{blog.title}
+									div
+										label.cm-text-bold Date - 
+										span #{blog.date}
+									div
+										label.cm-text-bold URL - 
+										a(target="_blank" href=`/blog/${blog.url}`) /blog/#{blog.url}
+									div
+										label.cm-text-bold Published - 
+										span #{blog.published}
+									//- div(style="margin-top: 15px;")
+									//- 	span.cm-text-bold Event date : 
+									//- 	!=talk.eventDate
+									.cm-text-right
+										button.cm-btn.primary Edit
+										form(action="/cms/blogs/delete" method="post")
+											input(type="hidden" value=blog._id name="id")
+											button.cm-btn.error Delete

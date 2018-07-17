@@ -77,8 +77,15 @@ router
     .post('/blogs', (req, res) => {
         const { title, date, content, published } = req.body;
 
-        return Blog.create({ title, date: date ? date : new Date(), content, url: title.replace(/ /g, '-'), published })
+        return Blog.create({ title, date: date ? date : new Date(), content, url: title.replace(/ /g, '-').toLowerCase(), published })
             .then(blog => res.send({ success: 1 }))
+            .catch(err => res.status(500).send('Some error occurred'));
+    })
+    .post('/blogs/delete', (req, res) => {
+        const { id } = req.body;
+
+        return Blog.findByIdAndRemove(id)
+            .then(() => res.redirect('/cms/blogs'))
             .catch(err => res.status(500).send('Some error occurred'));
     });
 
