@@ -28,7 +28,16 @@ block append css
 		}
 		.title {
 			width: 100%;
+		}
+		input {
 			margin-bottom: 15px;
+		}
+		label {
+			font-weight: 700;
+			font-size: 1.5em;
+			display: block;
+			margin-bottom: 15px;
+			margin-top: 30px;
 		}
 		.btn-draft {
 			margin-right: 15px;
@@ -48,8 +57,12 @@ block body
 			include logout
 			form
 				.cm-col-12
-					input.title(type="text" placeholder="Enter blog title" required)
+					label Blog title
+					input.title(type="text" placeholder="Enter blog title" name="blogTitle" required)
+					label Blog publish date (optional)
+					input(type="date" placeholder="Blog publish date (optional)" name="blogDate")
 				.cm-col-md-12
+					label Blog content
 					.cm-card.editor-card
 						.cm-card-body(style="padding: 60px;")
 							.editor
