@@ -6,7 +6,16 @@ block title
 	- var title = `${blogTitle} | Arun Michael Dsouza`
 
 block append css
+	link(rel="stylesheet" href="/css/blog.min.css")
 
 block body
 	main
+		article.blog-wrapper
+			h1.blog-title
+				a(href=`/blog/${url}`)!= blogTitle
+			.blog-date 
+				| Published on 
+				span!= date.toDateString()
+
+			div.blog-content!= content
 		

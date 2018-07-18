@@ -1,0 +1,61 @@
+// Blog styles
+
+.blog-wrapper {
+    width: 60%;
+    margin: 50px auto;
+}
+
+.blog-title {
+    margin-bottom: 25px;
+    & > a {
+        color: #222;
+        font-size: 1.2em;
+        padding-bottom: 5px;
+        border-bottom: 4px solid $blue;
+    }
+}
+
+.blog-date {
+    margin-bottom: 30px;
+    color: $grey;
+    span {
+        color: darken($grey, 5%);
+        font-weight: 700;
+    }
+}
+
+.blog-content {
+    & figure {
+        margin: 0;
+        text-align: center;
+        img {
+            width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+    }
+    & .medium-insert-images:first-child {
+        & > figure > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    blockquote {
+        font-style: italic;
+        border-left: 3px solid #222;
+        padding-left: 20px;
+        margin: 0;
+    }
+    figcaption {
+        & > p {
+            margin: 0;
+            font-size: .8em;
+            text-align: center;
+            color: $grey;
+        }
+    }
+    font-weight: 400;
+    color: #222;
+    font-size: 1.2em;
+    line-height: 1.7em;
+}
