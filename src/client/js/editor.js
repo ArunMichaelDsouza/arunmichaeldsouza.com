@@ -51,14 +51,22 @@ const editor = new MediumEditor('.editor', {
 $('.editor').mediumInsert({
     editor: editor
 });
+window.editor = editor;
 
 // Set initial content for editor
 (function () {
-    const d = blogDate ? new Date(blogDate) : new Date(),
+    var d = window.blogDate ? new Date(window.blogDate) : new Date(),
         date = d.getDate(),
         month = Number(d.getMonth()) + 1,
         year = d.getFullYear();
 
+    if (blogTitle && blogContent) {
+        window.editor.mode = 'edit';
+    } else {
+        window.editor.mode = 'create';
+    }
+
+    date = date < 10 ? '0' + date : date;
     month = month < 10 ? '0' + month : month;
     $('#title').val(blogTitle);
     $('#date').val(year + '-' + month + '-' + date);
@@ -77,6 +85,8 @@ $('.editor-btn').click(function (e) {
         alert('Blog details are empty!');
     } else {
         $.post('/cms/blogs', {
+            mode: window.editor.mode,
+            id: window.blogId,
             title: blogTitle,
             date: blogDate,
             content: blogContent,

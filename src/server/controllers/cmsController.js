@@ -44,7 +44,15 @@ router
     .post('/talks', (req, res) => {
         const { title, slidesUrl, videoUrl, location, eventName, eventUrl, eventDate } = req.body;
 
-        return Talk.create({ title, slidesUrl, videoUrl, location, eventName, eventUrl, eventDate })
+        return Talk.create({
+            title,
+            slidesUrl,
+            videoUrl,
+            location,
+            eventName,
+            eventUrl,
+            eventDate
+        })
             .then(talk => res.redirect('/cms/talks'))
             .catch(err => res.status(500).send('Some error occurred'));
     })
@@ -79,21 +87,42 @@ router
         } else {
             return Blog.findById(blogId)
                 .then(blog => {
-                    const { title: blogTitle, content: blogContent, date: blogDate } = blog;
+                    const { title: blogTitle, content: blogContent, date: blogDate, _id } = blog;
 
                     return res.render('cms/editor', {
-                        blogTitle, blogContent: btoa(blogContent), blogDate
+                        blogTitle,
+                        blogContent: btoa(blogContent),
+                        blogDate,
+                        _id
                     });
                 })
                 .catch(err => res.status(500).send('Some error occurred'));
         }
     })
     .post('/blogs', (req, res) => {
-        const { title, date, content, published } = req.body;
+        const { mode, id, title, date, content, published } = req.body;
 
-        return Blog.create({ title, date: date ? date : new Date(), content, url: title.replace(/ /g, '-').toLowerCase(), published })
-            .then(blog => res.send({ success: 1 }))
-            .catch(err => res.status(500).send('Some error occurred'));
+        if (mode === 'create') {
+            return Blog.create({
+                title,
+                date: date ? date : new Date(),
+                content,
+                url: title.replace(/ /g, '-').toLowerCase(),
+                published
+            })
+                .then(blog => res.send({ success: 1 }))
+                .catch(err => res.status(500).send('Some error occurred'));
+        } else if (mode === 'edit') {
+            return Blog.findByIdAndUpdate(id, {
+                title,
+                date: date ? date : new Date(),
+                content,
+                url: title.replace(/ /g, '-').toLowerCase(),
+                published
+            })
+                .then(blog => res.send({ success: 1 }))
+                .catch(err => res.status(500).send('Some error occurred'));
+        }
     })
     .post('/blogs/delete', (req, res) => {
         const { id } = req.body;
