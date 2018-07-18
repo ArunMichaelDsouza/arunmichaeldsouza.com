@@ -72,7 +72,7 @@ const editor = {
                     }
                 }),
                 customHtml: new CustomHtml({
-                    buttonText: '<hr/>',
+                    buttonText: 'hr',
                     htmlToInsert: '<hr/>'
                 })
             },
