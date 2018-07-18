@@ -108,6 +108,4 @@ const editor = {
         this.setEditorContent();
         $('.editor-btn').click(this.handleEditorClick);
     }
-};
-
-editor.init();
+}.init();
