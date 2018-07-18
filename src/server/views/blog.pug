@@ -18,4 +18,18 @@ block body
 				span!= date.toDateString()
 
 			div.blog-content!= content
+
+			#disqus_thread
+	
+	script.
+		var disqus_config = function () {
+			this.page.url = window.location.href;
+			this.page.identifier = "#{url}";
+		};
+		(function() {
+			var d = document, s = d.createElement('script');
+			s.src = 'https://arunmichaeldsouza.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
 		
