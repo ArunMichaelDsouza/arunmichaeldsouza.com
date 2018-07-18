@@ -3,6 +3,7 @@
 const router = require('express').Router({ mergeParams: false }),
     Talk = require('../models/Talk'),
     Blog = require('../models/Blog'),
+    Promise = require('bluebird'),
     cmsLoggedIn = (id, password) => {
         return (id === process.env.CMS_ID && password === process.env.CMS_PASSWORD) ? true : false;
     },
@@ -12,8 +13,11 @@ router
     .get('/', (req, res) => {
         const { loggedIn } = req.session;
 
-        return Talk.find().sort({ eventDate: -1 })
-            .then(talks => res.render('cms/index', { loggedIn, talks: talks.length }))
+        return Promise.join(
+            Talk.find(),
+            Blog.find(), function (talks, blogs) {
+                return res.render('cms/index', { loggedIn, talks: talks.length, blogs: blogs.length });
+            })
             .catch(err => res.status(500).send('Some error occurred'));
     })
     .post('/', (req, res) => {
