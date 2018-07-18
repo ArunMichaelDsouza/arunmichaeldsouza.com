@@ -8,6 +8,7 @@ require('medium-editor-custom-html');
 const EmbedButtonExtension = require('medium-editor-embed-button/src/js/medium-editor-embed-button');
 const defaultHtml = '<h1>First heading goes here</h1><h2><span style="font-weight: normal;">Second heading goes here</span></h2><p class=""><br></p><p class="">Content starts here..</p><div class="medium-insert-buttons" contenteditable="false" style="left: 30px; top: 121.781px; display: none;"> <button class="medium-insert-buttons-show" type="button"><span>+</span></button> <ul class="medium-insert-buttons-addons" style="display: none"> <li><button data-addon="images" data-action="add" class="medium-insert-action" type="button"><span class="fa fa-camera"></span></button></li><li><button data-addon="embeds" data-action="add" class="medium-insert-action" type="button"><span class="fa fa-youtube-play"></span></button></li></ul></div>';
 
+// Initialise editor
 const editor = new MediumEditor('.editor', {
     buttonLabels: 'fontawesome',
     extensions: {
@@ -46,12 +47,25 @@ const editor = new MediumEditor('.editor', {
     }
 });
 
+// Setup insert menu for editor
 $('.editor').mediumInsert({
     editor: editor
 });
 
-editor.setContent(defaultHtml, 0);
+// Set initial content for editor
+(function () {
+    const d = blogDate ? new Date(blogDate) : new Date(),
+        date = d.getDate(),
+        month = Number(d.getMonth()) + 1,
+        year = d.getFullYear();
 
+    month = month < 10 ? '0' + month : month;
+    $('#title').val(blogTitle);
+    $('#date').val(year + '-' + month + '-' + date);
+    editor.setContent(blogContent ? atob(blogContent) : defaultHtml, 0);
+})();
+
+// Handle editor click events
 $('.editor-btn').click(function (e) {
     e.preventDefault();
     const blogContent = editor.serialize()['element-0'].value,
