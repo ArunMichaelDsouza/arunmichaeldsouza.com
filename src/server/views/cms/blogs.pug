@@ -53,11 +53,8 @@ block body
 									div
 										label.cm-text-bold Published - 
 										span #{blog.published}
-									//- div(style="margin-top: 15px;")
-									//- 	span.cm-text-bold Event date : 
-									//- 	!=talk.eventDate
 									.cm-text-right
-										button.cm-btn.primary Edit
+										a(href=`/cms/blogs/editor/${blog._id}`).cm-btn.primary Edit
 										form(action="/cms/blogs/delete" method="post")
 											input(type="hidden" value=blog._id name="id")
 											button.cm-btn.error Delete

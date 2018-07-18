@@ -5,7 +5,8 @@ const router = require('express').Router({ mergeParams: false }),
     Blog = require('../models/Blog'),
     cmsLoggedIn = (id, password) => {
         return (id === process.env.CMS_ID && password === process.env.CMS_PASSWORD) ? true : false;
-    };
+    },
+    btoa = text => Buffer.from(text).toString('base64');
 
 router
     .get('/', (req, res) => {
@@ -65,14 +66,27 @@ router
 
         return res.redirect('/cms');
     })
-    .get('/blogs/editor', (req, res) => {
-        const { loggedIn } = req.session;
+    .get(['/blogs/editor/:blogId', '/blogs/editor'], (req, res) => {
+        const { loggedIn } = req.session,
+            { blogId } = req.params;
 
-        if (loggedIn) {
-            return res.render('cms/editor');
+        if (!loggedIn) {
+            return res.redirect('/cms');
         }
 
-        return res.redirect('/cms');
+        if (!blogId && loggedIn) {
+            return res.render('cms/editor');
+        } else {
+            return Blog.findById(blogId)
+                .then(blog => {
+                    const { title: blogTitle, content: blogContent, date: blogDate } = blog;
+
+                    return res.render('cms/editor', {
+                        blogTitle, blogContent: btoa(blogContent), blogDate
+                    });
+                })
+                .catch(err => res.status(500).send('Some error occurred'));
+        }
     })
     .post('/blogs', (req, res) => {
         const { title, date, content, published } = req.body;
