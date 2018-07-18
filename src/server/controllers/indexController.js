@@ -13,9 +13,9 @@ router
     .get('/blog/:blogUrl', (req, res) => {
         return Blog.findOne({ url: req.params.blogUrl })
             .then(blog => {
-                const { title } = blog;
+                const { title: blogTitle, date, content } = blog;
 
-                return res.render('blog', { title });
+                return res.render('blog', { blogTitle, date, content });
             })
             .catch(err => res.status(500).send('Some error occurred'));
     })
