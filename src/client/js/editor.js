@@ -26,6 +26,7 @@ const editor = {
 
         if (window.blogTitle && window.blogContent) {
             window.editor.mode = 'edit';
+            $('#title').attr('disabled', true);
         } else {
             window.editor.mode = 'create';
         }
