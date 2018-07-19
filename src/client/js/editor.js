@@ -33,6 +33,9 @@ const editor = {
 
         $('#title').val(blogTitle);
         $('#date').val(this.formatDate(date));
+        $('#metaDescription').val(metaDescription);
+        $('#metaKeywords').val(metaKeywords);
+        $('#metaImage').val(metaImage);
         window.editor.setContent(blogContent ? atob(blogContent) : defaultContent, 0);
     },
     handleEditorClick: function (e) {
@@ -41,7 +44,10 @@ const editor = {
         const blogContent = window.editor.serialize()['element-0'].value,
             blogTitle = $('#title').val(),
             blogDate = $('#date').val(),
-            published = $(this).attr('data-mode');
+            published = $(this).attr('data-mode'),
+            metaDescription = $('#metaDescription').val(),
+            metaKeywords = $('#metaKeywords').val(),
+            metaImage = $('#metaImage').val()
 
         if (!blogContent || !blogTitle) {
             alert('Blog details are empty!');
@@ -52,7 +58,10 @@ const editor = {
                 title: blogTitle,
                 date: blogDate,
                 content: blogContent,
-                published: published === 'draft' ? false : true
+                published: published === 'draft' ? false : true,
+                metaDescription: metaDescription,
+                metaKeywords: metaKeywords,
+                metaImage: metaImage
             }, function (res) {
                 if (res.success) {
                     alert('Blog action successful');

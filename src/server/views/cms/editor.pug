@@ -58,11 +58,17 @@ block append css
 			font-style: normal;
 			color: #444;
 		}
+		.meta > input {
+			margin-right: 15px;
+		}
 	script.
 		var blogTitle = "#{blogTitle}";
 		var blogContent = "#{blogContent}";
 		var blogDate = "#{blogDate}";
 		var blogId = "#{_id}";
+		var metaDescription = "#{metaDescription}";
+		var metaKeywords = "#{metaKeywords}";
+		var metaImage = "#{metaImage}";
 
 block body
 	include ../helpers/header
@@ -82,6 +88,11 @@ block body
 					.cm-card.editor-card
 						.cm-card-body(style="padding: 60px;")
 							.editor
+				.cm-col-md-12
+					.meta
+						input#metaDescription(type="text" name="metaDescription" placeholder="Enter meta description")
+						input#metaKeywords(type="text" name="metaKeywords" placeholder="Enter meta keywords")
+						input#metaImage(type="url" name="metaImage" placeholder="Enter meta image URL")
 				.cm-col-sm-5.cm-col-sm-offset-7.cm-text-right
 					button.cm-btn.primary.btn-draft.editor-btn(data-mode="draft") Save draft
 					button.cm-btn.success.btn-publish.editor-btn(data-mode="publish") Publish

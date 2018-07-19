@@ -91,20 +91,23 @@ router
         } else {
             return Blog.findById(blogId)
                 .then(blog => {
-                    const { title: blogTitle, content: blogContent, date: blogDate, _id } = blog;
+                    const { title: blogTitle, content: blogContent, date: blogDate, _id, metaDescription, metaKeywords, metaImage } = blog;
 
                     return res.render('cms/editor', {
                         blogTitle,
                         blogContent: btoa(blogContent),
                         blogDate,
-                        _id
+                        _id,
+                        metaDescription,
+                        metaKeywords,
+                        metaImage
                     });
                 })
                 .catch(err => res.status(500).send('Some error occurred'));
         }
     })
     .post('/blogs', (req, res) => {
-        const { mode, id, title, date, content, published } = req.body;
+        const { mode, id, title, date, content, published, metaDescription, metaKeywords, metaImage } = req.body;
 
         if (mode === 'create') {
             return Blog.create({
@@ -112,7 +115,10 @@ router
                 date: date ? date : new Date(),
                 content,
                 url: title.replace(/ /g, '-').toLowerCase(),
-                published
+                published,
+                metaDescription,
+                metaKeywords,
+                metaImage
             })
                 .then(blog => res.send({ success: 1 }))
                 .catch(err => res.status(500).send('Some error occurred'));

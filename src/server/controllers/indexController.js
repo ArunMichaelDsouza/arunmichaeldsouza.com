@@ -13,10 +13,12 @@ router
     .get('/blog/:blogUrl', (req, res) => {
         return Blog.findOne({ url: req.params.blogUrl })
             .then(blog => {
-                const { title: blogTitle, date, content, url, published } = blog;
+                const { title: blogTitle, date, content, url, published, metaDescription, metaKeywords, metaImage } = blog;
 
                 if (published) {
-                    return res.render('blog', { blogTitle, date, content, url });
+                    return res.render('blog', {
+                        blogTitle, date, content, url, metaDescription, metaKeywords, metaImage
+                    });
                 }
 
                 return res.send('Blog not published yet!');

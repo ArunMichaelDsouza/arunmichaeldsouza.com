@@ -4,6 +4,16 @@ extends helpers/base
 
 block title
 	- var title = `${blogTitle} | Arun Michael Dsouza`
+	- var blogUrl = `http://arunmichaeldsouza.com/blog/${url}`
+
+block append meta
+	meta(name="description" content=metaDescription)
+	meta(name="keywords" content=metaKeywords)
+	meta(property="og:type" content="article")
+	meta(property="og:title" content=blogTitle)
+	meta(property="og:url" content=blogUrl)
+	meta(property="og:description" content=metaDescription)
+	meta(property="og:image" content=metaImage)
 
 block append css
 	link(rel="stylesheet" href="/css/blog.min.css")

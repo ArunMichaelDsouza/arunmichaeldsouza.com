@@ -23,6 +23,18 @@ const mongoose = require('mongoose'),
             type: Date,
             required: true
         },
+        metaDescription: {
+            type: String,
+            default: ''
+        },
+        metaKeywords: {
+            type: String,
+            default: ''
+        },
+        metaImage: {
+            type: String,
+            default: ''
+        }
     },
     Blog = mongoose.model('blog', blogSchema, 'blogs');
 
