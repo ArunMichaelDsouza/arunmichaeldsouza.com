@@ -10,6 +10,9 @@ block append css
 
 block body
 	main
+		#social-share-fixed.social-share.fixed
+			include helpers/socialshare
+
 		article.blog-wrapper
 			h1.blog-title
 				a(href=`/blog/${url}`)!= blogTitle
@@ -21,6 +24,7 @@ block body
 
 			#disqus_thread
 	
+	script(src="/js/blog.min.js")
 	script.
 		var disqus_config = function () {
 			this.page.url = window.location.href;

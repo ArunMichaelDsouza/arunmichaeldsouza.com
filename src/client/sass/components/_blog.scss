@@ -72,3 +72,20 @@
     font-size: 1.2em;
     line-height: 1.7em;
 }
+
+.social-share {
+    &.fixed {
+        position: fixed;
+        top: 40%;
+        left: 8%;
+    }
+    & > a  {
+        display: block;
+        margin-bottom: 15px;
+        & >  svg {
+            width: 25px;
+            height: 25px;
+            fill: $blue;
+        }
+    }
+}
