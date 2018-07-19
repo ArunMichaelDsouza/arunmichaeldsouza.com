@@ -1,0 +1,52 @@
+//- Blog post page template
+
+extends helpers/base
+
+block title
+	- var title = `${blogTitle} | Arun Michael Dsouza`
+	- var blogUrl = `http://arunmichaeldsouza.com/blog/${url}`
+
+block append meta
+	meta(name="description" content=metaDescription)
+	meta(name="keywords" content=metaKeywords)
+	meta(property="og:type" content="article")
+	meta(property="og:title" content=blogTitle)
+	meta(property="og:url" content=blogUrl)
+	meta(property="og:description" content=metaDescription)
+	meta(property="og:image" content=metaImage)
+
+block append css
+	link(rel="stylesheet" href="/css/blogPost.min.css")
+
+block body
+	main
+		#social-share-fixed.social-share.fixed
+			include helpers/socialshare
+
+		article.content-wrapper
+			h1.page-primary-title
+				a(href=`/blog/${url}`)!= blogTitle
+			.sub-text
+				| Published on 
+				span!= date.toDateString()
+
+			div.blog-content!= content
+
+			.social-share.flat
+				include helpers/socialshare
+
+			#disqus_thread
+	
+	script(src="/js/blog.min.js")
+	script.
+		var disqus_config = function () {
+			this.page.url = window.location.href;
+			this.page.identifier = "#{url}";
+		};
+		(function() {
+			var d = document, s = d.createElement('script');
+			s.src = 'https://arunmichaeldsouza.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+		

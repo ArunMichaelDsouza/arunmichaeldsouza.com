@@ -3,50 +3,28 @@
 extends helpers/base
 
 block title
-	- var title = `${blogTitle} | Arun Michael Dsouza`
-	- var blogUrl = `http://arunmichaeldsouza.com/blog/${url}`
-
-block append meta
-	meta(name="description" content=metaDescription)
-	meta(name="keywords" content=metaKeywords)
-	meta(property="og:type" content="article")
-	meta(property="og:title" content=blogTitle)
-	meta(property="og:url" content=blogUrl)
-	meta(property="og:description" content=metaDescription)
-	meta(property="og:image" content=metaImage)
+	- var title = "Blog | Arun Michael Dsouza"
 
 block append css
 	link(rel="stylesheet" href="/css/blog.min.css")
 
 block body
 	main
-		#social-share-fixed.social-share.fixed
-			include helpers/socialshare
-
-		article.blog-wrapper
-			h1.blog-title
-				a(href=`/blog/${url}`)!= blogTitle
-			.blog-date 
-				| Published on 
-				span!= date.toDateString()
-
-			div.blog-content!= content
-
-			.social-share.flat
-				include helpers/socialshare
-
-			#disqus_thread
-	
-	script(src="/js/blog.min.js")
-	script.
-		var disqus_config = function () {
-			this.page.url = window.location.href;
-			this.page.identifier = "#{url}";
-		};
-		(function() {
-			var d = document, s = d.createElement('script');
-			s.src = 'https://arunmichaeldsouza.disqus.com/embed.js';
-			s.setAttribute('data-timestamp', +new Date());
-			(d.head || d.body).appendChild(s);
-		})();
-		
+		section.content-wrapper
+			h1.page-primary-title
+				a(href="/blog") Blog
+			.sub-text
+				| Ramblings on 
+				span Web Development
+				|, 
+				span JavaScript
+				|,  
+				span Open Source 
+				| and 
+				span Tech 
+				| in general.
+			each blog in blogs
+				.pre-text
+					span!= blog.date.toDateString()
+				h2.page-secondary-title
+					a(href=`/blog/${blog.url}`)!= blog.title

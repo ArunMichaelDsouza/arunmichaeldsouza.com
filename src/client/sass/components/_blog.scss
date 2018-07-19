@@ -1,38 +1,5 @@
 // Blog styles
 
-.blog-wrapper {
-    width: 60%;
-    margin: 50px auto;
-    @media screen and (max-width: $tabletWidth) {
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-	}
-}
-
-.blog-title {
-    margin-bottom: 15px;
-    & > a {
-        display: inline-block;
-        color: #222;
-        font-size: 1.2em;
-        padding-bottom: 5px;
-        border-bottom: 4px solid $blue;
-        @media screen and (max-width: $tabletWidth) {
-            font-size: 1em;
-        }
-    }
-}
-
-.blog-date {
-    margin-bottom: 30px;
-    color: $grey;
-    span {
-        color: darken($grey, 5%);
-        font-weight: 700;
-    }
-}
-
 .blog-content {
     margin-bottom: 50px;
     & figure {

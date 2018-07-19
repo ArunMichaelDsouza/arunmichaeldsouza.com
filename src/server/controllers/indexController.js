@@ -10,13 +10,18 @@ router
             .then(talks => res.render('index', { talks }))
             .catch(err => res.status(500).send('Some error occurred'));
     })
+    .get('/blog', (req, res) => {
+        return Blog.find({ published: true }).sort({ date: -1 })
+            .then(blogs => res.render('blog', { blogs }))
+            .catch(err => res.status(500).send('Some error occurred'));
+    })
     .get('/blog/:blogUrl', (req, res) => {
         return Blog.findOne({ url: req.params.blogUrl })
             .then(blog => {
                 const { title: blogTitle, date, content, url, published, metaDescription, metaKeywords, metaImage } = blog;
 
                 if (published) {
-                    return res.render('blog', {
+                    return res.render('blogPost', {
                         blogTitle, date, content, url, metaDescription, metaKeywords, metaImage
                     });
                 }
