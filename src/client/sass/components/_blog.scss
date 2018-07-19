@@ -78,14 +78,24 @@
         position: fixed;
         top: 40%;
         left: 8%;
-    }
-    & > a  {
-        display: block;
-        margin-bottom: 15px;
-        & >  svg {
-            width: 25px;
-            height: 25px;
-            fill: $blue;
+        & > a {
+            display: block;
+            margin-bottom: 15px;
         }
+        @media screen and (max-width: $tabletWidth) {
+            display: none !important;
+        }
+    }
+    &.flat {
+        margin-bottom: 30px;
+        & > a {
+            margin-right: 15px;
+            display: inline-block;
+        }
+    }
+    & > a > svg {
+        width: 25px;
+        height: 25px;
+        fill: #222;
     }
 }
