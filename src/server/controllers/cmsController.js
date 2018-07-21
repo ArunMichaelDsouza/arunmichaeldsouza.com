@@ -71,7 +71,7 @@ router
         const { loggedIn } = req.session;
 
         if (loggedIn) {
-            return Blog.find().sort({ eventDate: -1 })
+            return Blog.find().sort({ date: -1 })
                 .then(blogs => res.render('cms/blogs', { blogs }))
                 .catch(err => res.status(500).send('Some error occurred'));
         }
