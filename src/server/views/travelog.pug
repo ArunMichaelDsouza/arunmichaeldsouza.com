@@ -4,7 +4,6 @@ extends helpers/base
 
 block title
 	- var title = "Travelog | Arun Michael Dsouza"
-	- var subTitle = "Places I've been to"
 	- var key = process.env.GOOGLE_API_KEY
 	- var centerLat = 38.745460
 	- var centerLng = 51.102932
@@ -16,9 +15,14 @@ block append css
 	link(rel="stylesheet" href="css/travelog.min.css")
 
 block body
+	include helpers/header
 	main
-		include helpers/header
-		div#travlog-map.travelog-map
+		section.content-wrapper
+			h1.page-primary-title
+				a(href="/travelog") Travelog
+			.sub-text
+				| Explore the places I've travelled to
+			div#travlog-map.travelog-map
 	script.
 		function initMap() {	
 			var map = document.getElementById('travlog-map');
