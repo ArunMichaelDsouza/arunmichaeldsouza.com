@@ -1,23 +1,29 @@
 // Header styles
 
-.header {
-	margin: 40px 0;
-    padding: 0 25px;
-}
-
-.primary-title {
-    font-weight: 700;
-    font-size: 1.5em;
-
-    a {
-    	text-decoration: none;
-    	color: #1e1e1e;
+header {
+    margin-top: 40px;
+    .page-primary-title {
+        margin: 0 0 10px;
     }
-}
-
-.primary-text {
-    font-weight: 400;
-    color: #585858;
-    font-size: 1em;
-    line-height: 1.5em;
+    nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                display: inline-block;
+                margin-right: 5px;
+                &:not(:last-child):after {
+                    content: '/';
+                    color: $blue;
+                }
+                a {
+                    padding-right: 5px;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
 }

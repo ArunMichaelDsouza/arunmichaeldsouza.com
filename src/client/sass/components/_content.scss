@@ -1,22 +1,8 @@
 // Content styles
 
-.root-link {
-    font-size: 2.4em;
-    text-align: center;
-    margin-bottom: 40px;
-    & > a {
-        color: $black;
-        font-weight: 700;
-        display: inline-block;
-        @media screen and (max-width: $tabletWidth) {
-            font-size: 2em;
-        }
-    }
-}
-
 .content-wrapper {
     width: 60%;
-    margin: 50px auto;
+    margin: 40px auto;
     @media screen and (max-width: $tabletWidth) {
         width: 100%;
         padding: 0 15px;
@@ -25,7 +11,7 @@
 }
 
 .page-primary-title {
-    font-size: 2.2em;
+    font-size: 2em;
     margin-bottom: 15px;
     & > a {
         display: inline-block;
@@ -50,7 +36,7 @@
 .pre-text {
     margin-bottom: 10px;
     color: $grey;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .page-secondary-title {
