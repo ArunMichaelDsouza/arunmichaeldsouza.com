@@ -3,26 +3,28 @@
 @import './helpers/normalize';
 @import './helpers/variables';
 @import './helpers/base';
+@import './components/content';
 @import './components/talks';
-
-.main-wrapper {
-	margin: 40px 0 0;
-	padding: 0 25px;
-}
 
 .content-wrapper {
 	width: 45%;
-	margin: 0 auto 60px;
-
-	@media screen and (max-width: $tabletWidth) {
-		width: 100%;
-	}
 }
 
 .main-img {
 	width: 180px;
 	height: 180px;
 	border-radius: 50%;
+}
+
+.intro-text {
+	margin: 0 auto;
+	@media screen and (max-width: $tabletWidth) {
+		width: 100%;
+	}
+}
+
+.page-secondary-title {
+	margin: 0;
 }
 
 .intro-text,

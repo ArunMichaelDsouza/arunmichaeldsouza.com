@@ -9,38 +9,37 @@ block append css
 	link(rel="stylesheet" href="css/index.min.css")
 
 block body
-	main.main-wrapper
+	main
 		section.content-wrapper.text-center
-			a.no-td(href="/")
 				img.main-img(src="img/arun-michael-dsouza.png" alt="Arun Michael Dsouza's image")
-				h1.primary-title Arun Michael Dsouza
-			.primary-text.intro-text
-				p.
-					I'm a Technology Enthusiast, Speaker, an Open Source Lover and Contributor. I play drums (sometimes), I love to travel and play video games.
-				a(target="_blank" href="https://github.com/ArunMichaelDsouza") GitHub
-				a(target="_blank" href="https://twitter.com/amdsouza92") Twitter
-				a(target="_blank" href="https://www.behance.net/arunmichaeldsouza") Behance
-				a(target="_blank" href="https://medium.com/@arunmichaeldsouza") Medium
-		section.content-wrapper.text-left
-			h2.secondary-title Work
-			.secondary-text
-				| Currently working on Header Bidding and Ad Layout Optimisation Technology at 
-				a(href="https://www.adpushup.com/" target="_blank") AdPushup Inc.
-		section.content-wrapper.text-left
-			h2.secondary-title Talks / Presentations
-			.secondary-text
-				ul.ul-reset.talks-list
-					each talk in talks
-						li #{talk.title}
-							if talk.eventName
-								|  - 
-								a(href=talk.eventUrl target="_blank") #{talk.eventName}
-							.talks-links
-								if talk.videoUrl
-									a(href=talk.videoUrl target="_blank") Video
-								if talk.slidesUrl
-									a(href=talk.slidesUrl target="_blank") Slides
-							.location
-								img.icon-location(src="/img/location.png") 
-								span #{talk.location}
-				
+				h1.page-primary-title
+					a(href="/") Arun Michael Dsouza
+				.sub-text.intro-text.lh
+					| I'm a Technology Enthusiast, Speaker, an Open Source Lover and Contributor. I play drums (sometimes), I love to travel and play video games.
+					div
+					a(target="_blank" href="https://github.com/ArunMichaelDsouza") GitHub
+					a(target="_blank" href="https://twitter.com/amdsouza92") Twitter
+					a(target="_blank" href="https://www.behance.net/arunmichaeldsouza") Behance
+					a(target="_blank" href="/blog") Blog
+				.separator
+				section
+					h2.page-secondary-title.text-left Work
+					p.sub-text.text-left.lh
+						| Currently working on Header Bidding and Ad Layout Optimisation Technology at 
+						a(href="https://www.adpushup.com/" target="_blank") AdPushup Inc.
+				section
+					h2.page-secondary-title.text-left Talks / Presentations
+					ul.ul-reset.talks-list.text-left
+						each talk in talks
+							li #{talk.title}
+								if talk.eventName
+									|  - 
+									a(href=talk.eventUrl target="_blank") #{talk.eventName}
+								.talks-links
+									if talk.videoUrl
+										a(href=talk.videoUrl target="_blank") Video
+									if talk.slidesUrl
+										a(href=talk.slidesUrl target="_blank") Slides
+								.location
+									img.icon-location(src="/img/location.png") 
+									span #{talk.location}

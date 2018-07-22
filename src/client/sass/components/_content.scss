@@ -18,6 +18,9 @@
         color: $black;
         padding-bottom: 5px;
         border-bottom: 4px solid $blue;
+        &:hover {
+            text-decoration: none;
+        }
         @media screen and (max-width: $tabletWidth) {
             font-size: 1em;
         }
@@ -43,6 +46,9 @@
     margin: 0 0 40px;
     & > a {
         color: $black;
+        &:hover {
+            text-decoration: none;
+        }
     }
     padding-bottom: 10px;
     border-bottom: 1px solid $blue;
