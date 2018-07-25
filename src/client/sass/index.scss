@@ -8,6 +8,9 @@
 
 .content-wrapper {
 	width: 45%;
+	@media screen and (max-width: $tabletWidth) {
+		width: 100%;
+	}
 }
 
 .main-img {
@@ -18,6 +21,9 @@
 
 .intro-text {
 	margin: 0 auto;
+	p {
+		text-align: justify;
+	}
 	@media screen and (max-width: $tabletWidth) {
 		width: 100%;
 	}
@@ -30,6 +36,6 @@
 .intro-text,
 .talks-links {
 	a {
-		margin: 0 7px 0 0;
+		margin: 0 8px 0 0;
 	}
 }
