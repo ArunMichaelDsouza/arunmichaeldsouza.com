@@ -17,12 +17,13 @@
 	width: 180px;
 	height: 180px;
 	border-radius: 50%;
+	box-shadow: 4px 4px 0px $blue;
 }
 
 .intro-text {
 	margin: 0 auto;
 	p {
-		text-align: justify;
+		text-align: left;
 		a {
 			margin-right: 0;
 		}
@@ -34,6 +35,12 @@
 
 .page-secondary-title {
 	margin: 0;
+	& svg {
+		color: $blue;
+		width: 20px;
+		height: auto;
+		margin-left: 8px;
+	}
 }
 
 .intro-text,
