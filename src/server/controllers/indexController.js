@@ -15,6 +15,7 @@ router
             .then(talks => res.render('talks', { talks }))
             .catch(err => res.status(500).send('Some error occurred'));
     })
+    .get('/open-source', (req, res) => res.render('openSource'))
     .get('/blog', (req, res) => {
         return Blog.find({ published: true }).sort({ date: -1 })
             .then(blogs => res.render('blog', { blogs }))
