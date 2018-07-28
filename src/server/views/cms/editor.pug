@@ -71,12 +71,12 @@ block append css
 		var metaImage = "#{metaImage}";
 
 block body
-	include ../helpers/header
+	include cmsHeader
 	.cm-text-center
 		a(href="javascript:window.history.back()") Go back
 	.cm-grid
 		.cm-row
-			include logout
+			include logoutButton
 			form
 				.cm-col-12
 					label Blog title

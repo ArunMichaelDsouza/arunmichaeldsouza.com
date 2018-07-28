@@ -13,19 +13,13 @@ block body
 	main
 		section.content-wrapper
 			h1.page-primary-title
-				a(href="/blog") Blog
+				a(href="/talks") Talks
 			.sub-text
-				| Ramblings on 
-				span Web Development
-				|, 
-				span JavaScript
-				|,  
-				span Open Source 
-				| and 
-				span Tech 
-				| in general.
-			each blog in blogs
+				| Talks and Presentations from 
+				span JSConf Belgium, 
+				span JSConf Iceland 
+				| and Other Community Meetups.
+			each talk in talks
 				.pre-text
-					span!= blog.date.toDateString()
-				h2.page-secondary-title
-					a(href=`/blog/${blog.url}`)!= blog.title
+					span!= talk.eventDate.toDateString()
+				h2.page-secondary-title!= talk.title

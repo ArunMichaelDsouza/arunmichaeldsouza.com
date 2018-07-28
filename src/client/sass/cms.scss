@@ -3,7 +3,6 @@
 @import './helpers/normalize';
 @import './helpers/variables';
 @import './helpers/base';
-@import './components/header';
 @import './components/talks';
 
 html,
@@ -23,4 +22,8 @@ body {
     & > input {
         margin-bottom: 15px;
     }
+}
+
+a.cm-btn:hover {
+    text-decoration: none;
 }

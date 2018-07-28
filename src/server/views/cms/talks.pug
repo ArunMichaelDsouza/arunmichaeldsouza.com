@@ -21,12 +21,12 @@ block append css
 		}
 
 block body
-	include ../helpers/header
+	include cmsHeader
 	.cm-text-center
 		a(href="javascript:window.history.back()") Go back
 	.cm-grid
 		.cm-row
-			include logout
+			include logoutButton
 			.cm-col-md-4
 				.cm-card.card-bg
 					.cm-card-header Add a talk
