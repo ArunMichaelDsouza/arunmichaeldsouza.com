@@ -10,9 +10,14 @@ router
             .then(talks => res.render('index', { talks }))
             .catch(err => res.status(500).send('Some error occurred'));
     })
-    .get('/blog', (req, res) => {
-        return Blog.find({ published: true }).sort({ date: -1 })
+    .get('/talks', (req, res) => {
+        return Talk.find().sort({ date: -1 })
             .then(blogs => res.render('blog', { blogs }))
+            .catch(err => res.status(500).send('Some error occurred'));
+    })
+    .get('/blog', (req, res) => {
+        return Blog.find({ published: true }).sort({ eventDate: -1 })
+            .then(talks => res.render('blog', { talks }))
             .catch(err => res.status(500).send('Some error occurred'));
     })
     .get('/blog/:blogUrl', (req, res) => {

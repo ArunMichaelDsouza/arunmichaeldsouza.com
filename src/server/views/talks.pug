@@ -1,0 +1,31 @@
+//- Talks page template
+
+extends helpers/base
+
+block title
+	- var title = "Talks | Arun Michael Dsouza"
+
+block append css
+	link(rel="stylesheet" href="/css/talks.min.css")
+
+block body
+	include helpers/header
+	main
+		section.content-wrapper
+			h1.page-primary-title
+				a(href="/blog") Blog
+			.sub-text
+				| Ramblings on 
+				span Web Development
+				|, 
+				span JavaScript
+				|,  
+				span Open Source 
+				| and 
+				span Tech 
+				| in general.
+			each blog in blogs
+				.pre-text
+					span!= blog.date.toDateString()
+				h2.page-secondary-title
+					a(href=`/blog/${blog.url}`)!= blog.title
