@@ -2,7 +2,8 @@
 
 const router = require('express').Router({ mergeParams: false }),
     Talk = require('../models/Talk'),
-    Blog = require('../models/Blog');
+    Blog = require('../models/Blog'),
+    Project = require('../models/Project');
 
 router
     .get('/', (req, res) => {
@@ -15,7 +16,11 @@ router
             .then(talks => res.render('talks', { talks }))
             .catch(err => res.status(500).send('Some error occurred'));
     })
-    .get('/open-source', (req, res) => res.render('openSource'))
+    .get('/open-source', (req, res) => {
+        return Project.find({ type: 'open source' })
+            .then(projects => res.render('openSource', { projects }))
+            .catch(err => res.status(500).send('Some error occurred'));
+    })
     .get('/blog', (req, res) => {
         return Blog.find({ published: true }).sort({ date: -1 })
             .then(blogs => res.render('blog', { blogs }))

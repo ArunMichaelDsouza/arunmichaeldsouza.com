@@ -14,33 +14,24 @@ block body
 		section.content-wrapper
 			h1.page-primary-title
 				a(href="/open-source") Open Source
-			.sub-text
+			.sub-text.lh
 				| Utilities and Modules written in ReactJS, AngularJS, NodeJS, Sass/CSS etc. that get 
 				span 1.1M 
 				| Downloads every Month!
-			section(style="margin: 0 10px;")
-				.info-panel.split
-					.pre-text
-						span Python
-					h2.page-secondary-title
-						a(href="https://github.com/ArunMichaelDsouza/tensorflow-image-detection" target="_blank") tensorflow-image-detection
-					p
-						img(style="width: 200px;" src="https://raw.githubusercontent.com/ArunMichaelDsouza/tensorflow-image-detection/master/icon.png")
-					p
-						span(style="margin-right: 8px;")
-							a.github-button(href='https://github.com/ArunMichaelDsouza/tensorflow-image-detection', data-icon='octicon-star', aria-label='Star ArunMichaelDsouza/tensorflow-image-detection on GitHub') Star
-						a.github-button(href='https://github.com/ArunMichaelDsouza/tensorflow-image-detection/fork', data-icon='octicon-repo-forked', aria-label='Fork ArunMichaelDsouza/tensorflow-image-detection on GitHub') Fork
-				.info-panel.split
-					.pre-text
-						span test
-					h2.page-secondary-title
-						a(href="https://github.com/ArunMichaelDsouza/tensorflow-image-detection" target="_blank") tensorflow-image-detection
-					p
-						img(style="width: 200px;" src="https://raw.githubusercontent.com/ArunMichaelDsouza/tensorflow-image-detection/master/icon.png")
-					p
-						span(style="margin-right: 8px;")
-							a.github-button(href='https://github.com/ArunMichaelDsouza/tensorflow-image-detection', data-icon='octicon-star', aria-label='Star ArunMichaelDsouza/tensorflow-image-detection on GitHub') Star
-						a.github-button(href='https://github.com/ArunMichaelDsouza/tensorflow-image-detection/fork', data-icon='octicon-repo-forked', aria-label='Fork ArunMichaelDsouza/tensorflow-image-detection on GitHub') Fork
+			section(style="margin: 0 -10px;")
+				each project in projects
+					.info-panel.split
+						.pre-text
+							span!= project.language
+						h2.page-secondary-title
+							a(href=project.url target="_blank")!= project.title
+						p
+							img(style="width: 200px; height: auto;" src=project.image)
+						.pre-text.lh.desc!= project.description
+						p
+							span(style="margin-right: 8px;")
+								a.github-button(href=project.url, data-icon='octicon-star', data-size='large', data-show-count='true', aria-label='Star ArunMichaelDsouza/tensorflow-image-detection on GitHub') Star
+							a.github-button(href=`${project.url}/fork`, data-icon='octicon-repo-forked', data-size='large', data-show-count='true', aria-label='Fork ArunMichaelDsouza/tensorflow-image-detection on GitHub') Fork
 
 	script(async='', defer='', src='https://buttons.github.io/buttons.js')
 

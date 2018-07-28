@@ -54,10 +54,11 @@ block body
 					.cm-card-body
 						ul.ul-reset.item-list
 							each talk in talks
-								li #{talk.title}
+								li 
+									h2 #{talk.title}
 									if talk.eventName
-										|  - 
-										a(href=talk.eventUrl target="_blank") #{talk.eventName}
+										div 
+											a(href=talk.eventUrl target="_blank") #{talk.eventName}
 									div
 										if talk.videoUrl
 											a(href=talk.videoUrl target="_blank" style="margin-right: 7px;") Video

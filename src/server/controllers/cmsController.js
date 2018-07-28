@@ -3,6 +3,7 @@
 const router = require('express').Router({ mergeParams: false }),
     Talk = require('../models/Talk'),
     Blog = require('../models/Blog'),
+    Project = require('../models/Project'),
     Promise = require('bluebird'),
     cmsLoggedIn = (id, password) => {
         return (id === process.env.CMS_ID && password === process.env.CMS_PASSWORD) ? true : false;
@@ -15,8 +16,10 @@ router
 
         return Promise.join(
             Talk.find(),
-            Blog.find(), function (talks, blogs) {
-                return res.render('cms/index', { loggedIn, talks: talks.length, blogs: blogs.length });
+            Blog.find(),
+            Project.find(),
+            function (talks, blogs, projects) {
+                return res.render('cms/index', { loggedIn, talks: talks.length, blogs: blogs.length, projects: projects.length });
             })
             .catch(err => res.status(500).send('Some error occurred'));
     })
@@ -33,6 +36,38 @@ router
         req.session.destroy(() => {
             return res.redirect('/cms');
         });
+    })
+    .get('/projects', (req, res) => {
+        const { loggedIn } = req.session;
+
+        if (loggedIn) {
+            return Project.find().sort()
+                .then(projects => res.render('cms/projects', { projects }))
+                .catch(err => res.status(500).send('Some error occurred'));
+        }
+
+        return res.redirect('/cms');
+    })
+    .post('/projects', (req, res) => {
+        const { title, url, image, language, description, type } = req.body;
+
+        return Project.create({
+            title,
+            url,
+            image,
+            language,
+            description,
+            type
+        })
+            .then(project => res.redirect('/cms/projects'))
+            .catch(err => res.status(500).send('Some error occurred'));
+    })
+    .post('/projects/delete', (req, res) => {
+        const { id } = req.body;
+
+        return Project.findByIdAndRemove(id)
+            .then(() => res.redirect('/cms/projects'))
+            .catch(err => res.status(500).send('Some error occurred'));
     })
     .get('/talks', (req, res) => {
         const { loggedIn } = req.session;
