@@ -20,8 +20,12 @@
         width: 50%;
         padding: 0 10px;
         border-bottom: none;
+        box-sizing: border-box;
         & > p:last-child {
             border-bottom: 1px solid $blue;
+        }
+        @media screen and (max-width: $tabletWidth) {
+            width: 100%;
         }
     }
 }
