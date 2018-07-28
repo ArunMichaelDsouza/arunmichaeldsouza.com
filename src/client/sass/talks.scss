@@ -5,3 +5,20 @@
 @import './helpers/base';
 @import '/components/header';
 @import './components/content';
+
+.info-panel {
+    & > h2 {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    & > p {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+    & img {
+        vertical-align: middle;
+		margin-right: 5px;
+    }
+    margin-bottom: 40px;
+    border-bottom: 1px solid $blue;
+}

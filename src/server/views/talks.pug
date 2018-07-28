@@ -20,6 +20,21 @@ block body
 				span JSConf Iceland 
 				| and Other Community Meetups.
 			each talk in talks
-				.pre-text
-					span!= talk.eventDate.toDateString()
-				h2.page-secondary-title!= talk.title
+				.info-panel
+					.pre-text
+						span!= talk.eventDate.toDateString()
+					h2.page-secondary-title
+						if talk.videoUrl
+							a(href=talk.videoUrl target="_blank")!= talk.title
+						else 
+							a(href=talk.slidesUrl target="_blank")!= talk.title
+					if talk.eventName
+						p
+							a(href=talk.eventUrl target="_blank")!= talk.eventName
+					p
+						if talk.videoUrl
+							a(href=talk.videoUrl target="_blank" style="margin-right: 8px;") Video
+						a(href=talk.slidesUrl target="_blank") Slides
+					p
+						img.icon-location(src="/img/location.png") 
+						span #{talk.location}
