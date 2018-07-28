@@ -21,4 +21,8 @@
     }
     margin-bottom: 40px;
     border-bottom: 1px solid $blue;
+    &.split {
+        float: left;
+        width: 50%;
+    }
 }
