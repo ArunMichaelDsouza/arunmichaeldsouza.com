@@ -163,7 +163,10 @@ router
                 date: date ? date : new Date(),
                 content,
                 url: title.replace(/ /g, '-').toLowerCase(),
-                published
+                published,
+                metaDescription,
+                metaKeywords,
+                metaImage
             })
                 .then(blog => res.send({ success: 1 }))
                 .catch(err => res.status(500).send('Some error occurred'));
