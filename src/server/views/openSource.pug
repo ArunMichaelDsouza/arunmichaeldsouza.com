@@ -26,7 +26,8 @@ block body
 						h2.page-secondary-title
 							a(href=project.url target="_blank")!= project.title
 						p
-							img(src=project.image)
+							a(href=project.url target="_blank")
+								img(src=project.image)
 						.pre-text.lh.desc!= project.description
 						p
 							span(style="margin-right: 8px;")
