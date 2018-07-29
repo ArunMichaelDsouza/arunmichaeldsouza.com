@@ -5,6 +5,14 @@ extends helpers/base
 block title
 	- var title = "Blog | Arun Michael Dsouza"
 
+block append meta
+	meta(name="description" content="Ramblings on Web Development, JavaScript, Open Source and Tech in general.")
+	meta(name="keywords" content="blog, personal website, technology blog, personal blog")
+	meta(property="og:title" content="Blog | Arun Michael Dsouza")
+	meta(property="og:url" content="http://arunmichaeldsouza.com/blog")
+	meta(property="og:description" content="Ramblings on Web Development, JavaScript, Open Source and Tech in general.")
+	meta(property="og:image" content="http://arunmichaeldsouza.com/img/arun-michael-dsouza.png")
+
 block append css
 	link(rel="stylesheet" href="/css/blog.min.css")
 
