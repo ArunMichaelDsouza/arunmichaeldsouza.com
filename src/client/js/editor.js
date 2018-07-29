@@ -74,6 +74,7 @@ const editor = {
     init: function () {
         window.editor = new MediumEditor('.editor', {
             buttonLabels: 'fontawesome',
+            targetBlank: true,
             extensions: {
                 embedButton: new EmbedButtonExtension({
                     embedOpts: {
