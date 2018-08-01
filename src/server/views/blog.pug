@@ -6,12 +6,30 @@ block title
 	- var title = "Blog | Arun Michael Dsouza"
 
 block append meta
-	meta(name="description" content="Ramblings on Web Development, JavaScript, Open Source and Tech in general.")
-	meta(name="keywords" content="blog, personal website, technology blog, personal blog")
-	meta(property="og:title" content="Blog | Arun Michael Dsouza")
-	meta(property="og:url" content="https://arunmichaeldsouza.com/blog")
-	meta(property="og:description" content="Ramblings on Web Development, JavaScript, Open Source and Tech in general.")
-	meta(property="og:image" content="https://arunmichaeldsouza.com/img/arun-michael-dsouza.png")
+	- var metaTitle = "Blog | Arun Michael Dsouza"
+	- var metaDescription = "Ramblings on Web Development, JavaScript, Open Source and Tech in general."
+	- var metaKeywords = "blog, personal website, technology blog, personal blog"
+	- var metaURL = "https://arunmichaeldsouza.com/blog"
+	- var metaImage = "https://arunmichaeldsouza.com/img/arun-michael-dsouza.png"
+
+	meta(name="description" content=metaDescription)
+	meta(name="keywords" content=metaKeywords)
+
+	meta(property="og:title" content=metaTitle)
+	meta(property="og:url" content=metaURL)
+	meta(property="og:description" content=metaDescription)
+	meta(property="og:image" content=metaImage)
+
+	meta(itemprop="name", content=metaTitle)
+	meta(itemprop="description", content=metaDescription)
+	meta(itemprop="image", content=metaImage)
+
+	meta(name='twitter:card', content="summary")
+	meta(name='twitter:site', content='@amdsouza92')
+	meta(name='twitter:title', content=metaTitle)
+	meta(name='twitter:description', content=metaDescription)
+	meta(name='twitter:creator', content='@amdsouza92')
+	meta(name='twitter:image:src', content=metaImage)
 
 block append css
 	style.

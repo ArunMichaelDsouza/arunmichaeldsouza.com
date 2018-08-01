@@ -6,12 +6,30 @@ block title
 	- var title = "Talks | Arun Michael Dsouza"
 
 block append meta
-	meta(name="description" content="Talks and Presentations from JSConf Belgium, JSConf Iceland and Other Community Meetups.")
-	meta(name="keywords" content="talks, presentations, personal website")
-	meta(property="og:title" content="Talks | Arun Michael Dsouza")
-	meta(property="og:url" content="https://arunmichaeldsouza.com/talks")
-	meta(property="og:description" content="Talks and Presentations from JSConf Belgium, JSConf Iceland and Other Community Meetups.")
-	meta(property="og:image" content="https://arunmichaeldsouza.com/img/arun-michael-dsouza.png")
+	- var metaTitle = "Talks | Arun Michael Dsouza"
+	- var metaDescription = "Talks and Presentations from JSConf Belgium, JSConf Iceland and Other Community Meetups."
+	- var metaKeywords = "talks, presentations, personal website"
+	- var metaURL = "https://arunmichaeldsouza.com/talks"
+	- var metaImage = "https://arunmichaeldsouza.com/img/arun-michael-dsouza.png"
+
+	meta(name="description" content=metaDescription)
+	meta(name="keywords" content=metaKeywords)
+
+	meta(property="og:title" content=metaTitle)
+	meta(property="og:url" content=metaURL)
+	meta(property="og:description" content=metaDescription)
+	meta(property="og:image" content=metaImage)
+
+	meta(itemprop="name", content=metaTitle)
+	meta(itemprop="description", content=metaDescription)
+	meta(itemprop="image", content=metaImage)
+
+	meta(name='twitter:card', content="summary")
+	meta(name='twitter:site', content='@amdsouza92')
+	meta(name='twitter:title', content=metaTitle)
+	meta(name='twitter:description', content=metaDescription)
+	meta(name='twitter:creator', content='@amdsouza92')
+	meta(name='twitter:image:src', content=metaImage)
 
 block append css
 	style.

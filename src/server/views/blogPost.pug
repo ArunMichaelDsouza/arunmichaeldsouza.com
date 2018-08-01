@@ -9,6 +9,25 @@ block title
 block append meta
 	meta(name="description" content=metaDescription)
 	meta(name="keywords" content=metaKeywords)
+
+	meta(property="og:title" content=blogTitle)
+	meta(property="og:url" content=blogUrl)
+	meta(property="og:description" content=metaDescription)
+	meta(property="og:image" content=metaImage)
+
+	meta(itemprop="name", content=blogTitle)
+	meta(itemprop="description", content=metaDescription)
+	meta(itemprop="image", content=metaImage)
+
+	meta(name='twitter:card', content="summary")
+	meta(name='twitter:site', content='@amdsouza92')
+	meta(name='twitter:title', content=blogTitle)
+	meta(name='twitter:description', content=metaDescription)
+	meta(name='twitter:creator', content='@amdsouza92')
+	meta(name='twitter:image:src', content=metaImage)
+
+	meta(name="description" content=metaDescription)
+	meta(name="keywords" content=metaKeywords)
 	meta(property="og:type" content="article")
 	meta(property="og:title" content=blogTitle)
 	meta(property="og:url" content=blogUrl)
