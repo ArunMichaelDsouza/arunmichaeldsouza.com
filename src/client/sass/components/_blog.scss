@@ -27,9 +27,9 @@
         margin: 0;
     }
     figcaption {
-        & > p {
+        &, & > p {
             margin: 0;
-            font-size: .8em;
+            font-size: 14px;
             text-align: center;
             color: $grey;
             line-height: 22px;
