@@ -36,7 +36,13 @@ const editor = {
         $('#metaDescription').val(metaDescription);
         $('#metaKeywords').val(metaKeywords);
         $('#metaImage').val(metaImage);
+        $('#html-editor').val(blogContent ? atob(blogContent) : defaultContent);
         window.editor.setContent(blogContent ? atob(blogContent) : defaultContent, 0);
+    },
+    showHTMLEditor: function (e) {
+        e.preventDefault();
+
+        $('.html-editor').show();
     },
     handleEditorClick: function (e) {
         e.preventDefault();
@@ -116,6 +122,7 @@ const editor = {
         });
 
         this.setEditorContent();
+        $('#btn-html-editor').click(this.showHTMLEditor);
         $('.editor-btn').click(this.handleEditorClick);
     }
 }.init();

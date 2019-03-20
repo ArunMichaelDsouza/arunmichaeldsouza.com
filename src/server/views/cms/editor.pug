@@ -40,12 +40,14 @@ block append css
 			margin-bottom: 15px;
 			margin-top: 30px;
 		}
-		.btn-draft {
+		.btn-draft,
+		.btn-html-editor {
 			margin-right: 15px;
 			margin-bottom: 30px;
 		}
 		.btn-draft,
-		.btn-publish {
+		.btn-publish,
+		.btn-html-editor {
 			width: 200px;
 		}
 		blockquote {
@@ -58,8 +60,14 @@ block append css
 			font-style: normal;
 			color: #444;
 		}
+		.meta {
+			border-bottom: 1px solid #ddd;
+		}
 		.meta > input {
 			margin-right: 15px;
+		}
+		.buttons {
+			margin-top: 50px;
 		}
 	script.
 		var blogTitle = "#{blogTitle}";
@@ -93,7 +101,10 @@ block body
 						input#metaDescription(type="text" name="metaDescription" placeholder="Enter meta description")
 						input#metaKeywords(type="text" name="metaKeywords" placeholder="Enter meta keywords")
 						input#metaImage(type="url" name="metaImage" placeholder="Enter meta image URL")
-				.cm-col-sm-5.cm-col-sm-offset-7.cm-text-right
+				.cm-col-md-12.html-editor(style="display:none")
+					textarea#html-editor
+				.cm-col-sm-7.cm-col-sm-offset-5.cm-text-right.buttons
+					button.cm-btn.warning.btn-html-editor#btn-html-editor HTML editor
 					button.cm-btn.primary.btn-draft.editor-btn(data-mode="draft") Save draft
 					button.cm-btn.success.btn-publish.editor-btn(data-mode="publish") Publish
 
