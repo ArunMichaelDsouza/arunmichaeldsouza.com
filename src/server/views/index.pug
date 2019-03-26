@@ -39,7 +39,9 @@ block body
 	main
 		section.content-wrapper
 				.text-center
-					img.main-img(src="img/arun-michael-dsouza.png" alt="Arun Michael Dsouza's image")
+					picture.main-img
+						source(type='image/webp', srcset='img/arun-michael-dsouza.webp')
+						img(src='img/arun-michael-dsouza.png' alt="Arun Michael Dsouza's image")
 					h1.page-primary-title
 						a(href="/") Arun Michael Dsouza
 					.sub-text.intro-text.lh
