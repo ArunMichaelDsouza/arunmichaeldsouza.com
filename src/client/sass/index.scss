@@ -13,7 +13,8 @@
 	}
 }
 
-.main-img {
+.main-img > source,
+.main-img > img {
 	width: 180px;
 	height: 180px;
 	border-radius: 50%;
