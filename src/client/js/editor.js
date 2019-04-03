@@ -42,6 +42,7 @@ const editor = {
     showHTMLEditor: function (e) {
         e.preventDefault();
 
+        window.htmlEditorOpen = true;
         $('.html-editor').show();
     },
     handleEditorClick: function (e) {
@@ -63,7 +64,7 @@ const editor = {
                 id: window.blogId,
                 title: blogTitle,
                 date: blogDate,
-                content: blogContent,
+                content: window.htmlEditorOpen ? $('#html-editor').val() : blogContent,
                 published: published === 'draft' ? false : true,
                 metaDescription: metaDescription,
                 metaKeywords: metaKeywords,
