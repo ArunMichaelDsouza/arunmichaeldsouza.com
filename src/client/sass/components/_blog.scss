@@ -55,10 +55,14 @@
         }
     }
     &.flat {
+        display: none;
         margin-bottom: 30px;
         & > a {
             margin-right: 15px;
             display: inline-block;
+        }
+        @media screen and (max-width: $tabletWidth) {
+            display: block !important;
         }
     }
     & > a > svg {
