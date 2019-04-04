@@ -12,7 +12,6 @@ pids
 *.pid.lock
 deploy
 fabfile.py
-config.js
 .env
 backup
 backupDataToRemote.sh
