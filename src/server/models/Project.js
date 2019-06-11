@@ -24,7 +24,11 @@ const mongoose = require('mongoose'),
         type: {
             type: String,
             required: true
-        }
+        },
+        date: {
+            type: Date,
+            required: true
+        },
     },
     Project = mongoose.model('project', projectSchema, 'projects');
 
