@@ -41,7 +41,7 @@ router
         const { loggedIn } = req.session;
 
         if (loggedIn) {
-            return Project.find().sort()
+            return Project.find().sort({ date: -1 })
                 .then(projects => res.render('cms/projects', { projects }))
                 .catch(err => res.status(500).send('Some error occurred'));
         }

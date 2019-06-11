@@ -17,7 +17,7 @@ router
             .catch(err => res.status(500).send('Some error occurred'));
     })
     .get('/open-source', (req, res) => {
-        return Project.find({ type: 'open source' })
+        return Project.find({ type: 'open source' }).sort({ date: -1 })
             .then(projects => res.render('openSource', { projects }))
             .catch(err => res.status(500).send('Some error occurred'));
     })
