@@ -57,7 +57,8 @@ router
             image,
             language,
             description,
-            type
+            type,
+            date: new Date()
         })
             .then(project => res.redirect('/cms/projects'))
             .catch(err => res.status(500).send('Some error occurred'));
