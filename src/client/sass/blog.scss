@@ -5,3 +5,24 @@
 @import './helpers/base';
 @import '/components/header';
 @import './components/content';
+@import './components/grid';
+
+.blog-wrapper {
+    margin-bottom: 40px;
+    .blog-info-wrapper {
+        padding: 0 0 0 10px;
+        @media (max-width: 768px) {
+            padding: 0;
+        }
+        .page-secondary-title {
+            @media (max-width: 768px) {
+                margin: 10px 0 10px;
+            }
+        }
+        .pre-text {
+            @media (max-width: 768px) {
+                margin: 0;
+            }
+        }
+    }
+}
