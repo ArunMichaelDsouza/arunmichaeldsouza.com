@@ -3,7 +3,8 @@
 const router = require('express').Router({ mergeParams: false }),
     Talk = require('../models/Talk'),
     Blog = require('../models/Blog'),
-    Project = require('../models/Project');
+    Project = require('../models/Project'),
+    Promise = require('bluebird');
 
 router
     .get('/', (req, res) => {
@@ -28,18 +29,25 @@ router
     })
     .get('/blog/:blogUrl', (req, res) => {
         return Blog.findOne({ url: req.params.blogUrl })
-            .then(blog => {
-                const { title: blogTitle, date, content, url, published, metaDescription, metaKeywords, metaImage } = blog;
+            .then(blog => Promise.all([blog, Blog.getPreviousAndNextBlogs(blog._id)]))
+            .then(blogData => {
+                const [blog, previousAndNextBlogs] = blogData,
+                    { title: blogTitle, date, content, url, published, metaDescription, metaKeywords, metaImage } = blog,
+                    { previousBlog, nextBlog } = previousAndNextBlogs;
 
                 if (published) {
+                    console.log(previousBlog, nextBlog);
                     return res.render('blogPost', {
-                        blogTitle, date, content, url, metaDescription, metaKeywords, metaImage
+                        blogTitle, date, content, url, metaDescription, metaKeywords, metaImage, previousBlog, nextBlog
                     });
                 }
 
                 return res.send('Blog not published yet!');
             })
-            .catch(err => res.status(500).send('Some error occurred'));
+            .catch(err => {
+                console.log(err);
+                res.status(500).send('Some error occurred')
+            });
     })
     .get('/travelog', (req, res) => res.render('travelog'));
 

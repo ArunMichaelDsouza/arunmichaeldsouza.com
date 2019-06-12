@@ -1,7 +1,8 @@
 // Blog model
 
 const mongoose = require('mongoose'),
-    blogSchema = {
+    Promise = require('bluebird'),
+    blogSchema = new mongoose.Schema({
         title: {
             type: String,
             required: true
@@ -35,8 +36,25 @@ const mongoose = require('mongoose'),
             type: String,
             default: ''
         }
-    },
-    Blog = mongoose.model('blog', blogSchema, 'blogs');
+    });
+
+blogSchema.statics = {
+    getPreviousAndNextBlogs: function (id) {
+        return Promise.all([
+            this.findOne({ _id: { $lt: id }, published: true }).select({ title: 1, url: 1, date: 1, _id: 0 }).sort({ _id: -1 }),
+            this.findOne({ _id: { $gt: id }, published: true }).select({ title: 1, url: 1, date: 1, _id: 0 }).sort({ _id: 1 })
+        ]).then(blogs => {
+            const [previousBlog, nextBlog] = blogs;
+
+            return {
+                previousBlog: previousBlog ? previousBlog : null,
+                nextBlog: nextBlog ? nextBlog : null
+            };
+        });
+    }
+};
+
+const Blog = mongoose.model('blog', blogSchema, 'blogs');
 
 module.exports = Blog;
 
