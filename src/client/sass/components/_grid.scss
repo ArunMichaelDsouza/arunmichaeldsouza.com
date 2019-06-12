@@ -25,6 +25,12 @@
                 width: 30%;
             }
         }
+        .col-50 {
+            @media (min-width: 768px) {
+                float: left;
+                width: 50%;
+            }
+        }
         .col-70 {
             @media (min-width: 768px) {
                 float: left;

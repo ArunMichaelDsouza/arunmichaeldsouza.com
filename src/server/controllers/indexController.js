@@ -36,7 +36,6 @@ router
                     { previousBlog, nextBlog } = previousAndNextBlogs;
 
                 if (published) {
-                    console.log(previousBlog, nextBlog);
                     return res.render('blogPost', {
                         blogTitle, date, content, url, metaDescription, metaKeywords, metaImage, previousBlog, nextBlog
                     });
