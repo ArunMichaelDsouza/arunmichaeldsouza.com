@@ -6,7 +6,8 @@ mongoose.Promise = Promise;
 mongoose.connect(`mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`, {
     useNewUrlParser: true,
     useFindAndModify: false,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useUnifiedTopology: true
 });
 
 module.exports = mongoose.connection;
