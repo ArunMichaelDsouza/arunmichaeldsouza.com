@@ -4,10 +4,10 @@
   "description": "My Personal Website",
   "main": "index.js",
   "scripts": {
-    "webpack": "cd ./src/client && webpack",
-    "webpack-watch": "cd ./src/client && webpack --watch",
-    "server": "node ./src/server/app.js",
-    "server-watch": "./node_modules/.bin/nodemon ./src/server/app.js"
+    "build": "cd ./src/client && webpack",
+    "build:watch": "cd ./src/client && webpack --watch",
+    "start": "node ./src/server/app.js",
+    "start:watch": "./node_modules/.bin/nodemon ./src/server/app.js"
   },
   "repository": {
     "type": "git",
