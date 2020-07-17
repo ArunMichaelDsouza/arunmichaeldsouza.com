@@ -8,6 +8,7 @@ const express = require('express'),
     path = require('path'),
     bodyParser = require('body-parser'),
     session = require('express-session'),
+    helmet = require('helmet'),
     woodlot = require('woodlot').middlewareLogger,
     startServer = () => {
         return app.listen(process.env.PORT, () => {
@@ -15,6 +16,7 @@ const express = require('express'),
         });
     };
 
+app.use(helmet());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
