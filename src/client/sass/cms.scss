@@ -24,6 +24,23 @@ body {
     }
 }
 
+.tag-list {
+    padding: 0;
+    margin: 10px 0;
+}
+
+.tag,
+.tag-added {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.tags-added {
+    background-color: #fff;
+    padding: 10px;
+}
+
 a.cm-btn:hover {
     text-decoration: none;
 }

@@ -35,6 +35,10 @@ const mongoose = require('mongoose'),
         metaImage: {
             type: String,
             default: ''
+        },
+        tags: {
+            type: Array,
+            default: []
         }
     });
 

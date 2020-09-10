@@ -109,6 +109,15 @@ block body
 						input#metaImage(type="url" name="metaImage" placeholder="Enter meta image URL")
 				.cm-col-md-12.html-editor(style="display:none")
 					textarea#html-editor
+				.cm-col-md-12
+					label Add tags
+					.cm-text-small Click on the tags to add/remove them
+					ul#tag-list.tag-list
+						each tag in tags
+							li.tag.cm-badge.primary(data-id=tag.title)!= tag.title
+					ul#tags-added.tag-list.tags-added
+						each tag in tagsAdded
+							li.tag-added.cm-badge.primary(data-id=tag)!= tag
 				.cm-col-sm-7.cm-col-sm-offset-5.cm-text-right.buttons
 					button.cm-btn.warning.btn-html-editor#btn-html-editor HTML editor
 					button.cm-btn.primary.btn-draft.editor-btn(data-mode="draft") Save draft

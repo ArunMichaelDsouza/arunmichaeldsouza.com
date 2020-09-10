@@ -59,6 +59,9 @@ const editor = {
         if (!blogContent || !blogTitle) {
             alert('Blog details are empty!');
         } else {
+            const tagsElements = Array.prototype.slice.call(document.getElementById('tags-added').children);
+            const tagsAdded = tagsElements.map(tag => tag.innerText);
+
             $.post('/cms/blogs', {
                 mode: window.editor.mode,
                 id: window.blogId,
@@ -68,7 +71,8 @@ const editor = {
                 published: published === 'draft' ? false : true,
                 metaDescription: metaDescription,
                 metaKeywords: metaKeywords,
-                metaImage: metaImage
+                metaImage: metaImage,
+                tags: tagsAdded
             }, function (res) {
                 if (res.success) {
                     alert('Blog action successful');
@@ -78,7 +82,56 @@ const editor = {
             });
         }
     },
+    tagAdded: '',
+    addTagToList: function(tagName) {
+        const tagList = document.getElementById('tag-list');
+        const listItem = document.createElement('li');
+        listItem.classList.add('tag', 'cm-badge', 'primary');
+        listItem.innerText = tagName;
+        listItem.setAttribute('data-id', tagName);
+        tagList.appendChild(listItem);
+        this.setAddTagHandlers();
+    },
+    setRemoveTagHandlers: function() {
+        this.tagAdded = '';
+        const that = this;
+        const tagAddedElements = Array.prototype.slice.call(document.getElementsByClassName('tag-added'));
+        tagAddedElements.forEach(function(element) {
+            element.onclick = function(e) {
+                const element = e.target;
+                const tagName = element.innerText;
+                that.addTagToList(tagName);
+                element.remove();
+            };
+        });
+    },
+    renderAddedTags: function() {
+        const tagsAdded = document.getElementById('tags-added');
+        const listItem = document.createElement('li');
+        listItem.classList.add('tag-added', 'cm-badge', 'primary');
+        listItem.innerText = this.tagAdded;
+        tagsAdded.appendChild(listItem);
+        this.setRemoveTagHandlers();
+    },
+    removeAndAddTag: function(e) {
+        const element = e.target;
+        const tagName = element.getAttribute('data-id');
+        this.tagAdded = tagName;
+        element.remove();
+        this.renderAddedTags();
+    },
+    setAddTagHandlers: function() {
+        const that = this;
+        const tagElements = Array.prototype.slice.call(document.getElementsByClassName('tag'));
+        tagElements.forEach(function(element) {
+            element.onclick = function(e) {
+                that.removeAndAddTag(e);
+            };
+        });
+    },
     init: function () {
+        this.setAddTagHandlers();
+        this.setRemoveTagHandlers();
         window.editor = new MediumEditor('.editor', {
             buttonLabels: 'fontawesome',
             targetBlank: true,

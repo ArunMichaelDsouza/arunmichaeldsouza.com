@@ -4,6 +4,7 @@ const router = require('express').Router({ mergeParams: false }),
     Talk = require('../models/Talk'),
     Blog = require('../models/Blog'),
     Project = require('../models/Project'),
+    Tag = require('../models/Tag'),
     Promise = require('bluebird'),
     cmsLoggedIn = (id, password) => {
         return (id === process.env.CMS_ID && password === process.env.CMS_PASSWORD) ? true : false;
@@ -18,8 +19,9 @@ router
             Talk.find(),
             Blog.find(),
             Project.find(),
-            function (talks, blogs, projects) {
-                return res.render('cms/index', { loggedIn, talks: talks.length, blogs: blogs.length, projects: projects.length });
+            Tag.find(),
+            function (talks, blogs, projects, tags) {
+                return res.render('cms/index', { loggedIn, talks: talks.length, blogs: blogs.length, projects: projects.length, tags: tags.length });
             })
             .catch(err => res.status(500).send('Some error occurred'));
     })
@@ -103,6 +105,36 @@ router
             .then(() => res.redirect('/cms/talks'))
             .catch(err => res.status(500).send('Some error occurred'));
     })
+    .get('/tags', (req, res) => {
+        const { loggedIn } = req.session;
+
+        if (loggedIn) {
+            return Tag.find().sort({ eventDate: -1 })
+                .then(tags => res.render('cms/tags', { tags }))
+                .catch(err => res.status(500).send('Some error occurred'));
+        }
+
+        return res.redirect('/cms');
+    })
+    .post('/tags', (req, res) => {
+        const { title } = req.body;
+
+        return Tag.create({
+            title
+        })
+            .then(tag => res.redirect('/cms/tags'))
+            .catch(err => {
+                console.log(err);
+                res.status(500).send('Some error occurred')
+            });
+    })
+    .post('/tags/delete', (req, res) => {
+        const { id } = req.body;
+
+        return Tag.findByIdAndRemove(id)
+            .then(() => res.redirect('/cms/tags'))
+            .catch(err => res.status(500).send('Some error occurred'));
+    })
     .get('/blogs', (req, res) => {
         const { loggedIn } = req.session;
 
@@ -125,25 +157,31 @@ router
         if (!blogId && loggedIn) {
             return res.render('cms/editor');
         } else {
-            return Blog.findById(blogId)
-                .then(blog => {
-                    const { title: blogTitle, content: blogContent, date: blogDate, _id, metaDescription, metaKeywords, metaImage } = blog;
+            return Promise.join(Blog.findById(blogId), Tag.find(), function(blog, tags) {
+                const { title: blogTitle, content: blogContent, date: blogDate, _id, metaDescription, metaKeywords, metaImage, tags: tagsAdded } = blog;
+                const tagsAddedDefault = tagsAdded || [];
+                const tagsDifference = tags.filter(tag => !tagsAddedDefault.includes(tag.title));
 
-                    return res.render('cms/editor', {
-                        blogTitle,
-                        blogContent: btoa(blogContent),
-                        blogDate,
-                        _id,
-                        metaDescription,
-                        metaKeywords,
-                        metaImage
-                    });
-                })
-                .catch(err => res.status(500).send('Some error occurred'));
+                return res.render('cms/editor', {
+                    blogTitle,
+                    blogContent: btoa(blogContent),
+                    blogDate,
+                    _id,
+                    metaDescription,
+                    metaKeywords,
+                    metaImage,
+                    tags: tagsDifference,
+                    tagsAdded: tagsAddedDefault
+                });
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).send('Some error occurred')
+            });
         }
     })
     .post('/blogs', (req, res) => {
-        const { mode, id, title, date, content, published, metaDescription, metaKeywords, metaImage } = req.body;
+        const { mode, id, title, date, content, published, metaDescription, metaKeywords, metaImage, tags } = req.body;
 
         if (mode === 'create') {
             return Blog.create({
@@ -154,7 +192,8 @@ router
                 published,
                 metaDescription,
                 metaKeywords,
-                metaImage
+                metaImage,
+                tags
             })
                 .then(blog => res.send({ success: 1 }))
                 .catch(err => res.status(500).send('Some error occurred'));
@@ -167,7 +206,8 @@ router
                 published,
                 metaDescription,
                 metaKeywords,
-                metaImage
+                metaImage,
+                tags
             })
                 .then(blog => res.send({ success: 1 }))
                 .catch(err => res.status(500).send('Some error occurred'));
