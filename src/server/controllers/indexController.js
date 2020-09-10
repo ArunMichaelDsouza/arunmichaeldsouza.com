@@ -32,12 +32,12 @@ router
             .then(blog => Promise.all([blog, Blog.getPreviousAndNextBlogs(blog._id)]))
             .then(blogData => {
                 const [blog, previousAndNextBlogs] = blogData,
-                    { title: blogTitle, date, content, url, published, metaDescription, metaKeywords, metaImage } = blog,
+                    { title: blogTitle, date, content, url, published, metaDescription, metaKeywords, metaImage, tags } = blog,
                     { previousBlog, nextBlog } = previousAndNextBlogs;
 
                 if (published) {
                     return res.render('blogPost', {
-                        blogTitle, date, content, url, metaDescription, metaKeywords, metaImage, previousBlog, nextBlog
+                        blogTitle, date, content, url, metaDescription, metaKeywords, metaImage, previousBlog, nextBlog, tags
                     });
                 }
 
