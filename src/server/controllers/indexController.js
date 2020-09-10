@@ -48,6 +48,13 @@ router
                 res.status(500).send('Some error occurred')
             });
     })
+    .get('/blog/tag/:tag', (req, res) => {
+        const { tag } = req.params;
+        const pageHeading = `Blog posts tagged under "${tag}"`;
+        return Blog.find({ published: true, tags: tag}).sort({ date: -1 })
+            .then(blogs => res.render('blog', { blogs, pageHeading, tag }))
+            .catch(err => res.status(500).send('Some error occurred'));
+    })
     .get('/travelog', (req, res) => res.render('travelog'));
 
 module.exports = router;

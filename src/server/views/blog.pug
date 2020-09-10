@@ -40,17 +40,23 @@ block body
 	main
 		section.content-wrapper
 			h1.page-primary-title
-				a(href="/blog") Blog
-			.sub-text.lh
-				| Ramblings on 
-				span web development
-				|, 
-				span JavaScript
-				|,  
-				span open source 
-				| and 
-				span tech 
-				| in general.
+				if pageHeading
+					a(href=`/blog/tag/${tag}`)!= pageHeading
+				else
+					a(href="/blog") Blog
+			if !pageHeading
+				.sub-text.lh
+					| Ramblings on 
+					span web development
+					|, 
+					span JavaScript
+					|,  
+					span open source 
+					| and 
+					span tech 
+					| in general.
+			else
+				.sub-text.lh
 			each blog in blogs
 				.grid.list-item
 					.row
