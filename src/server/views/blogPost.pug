@@ -59,7 +59,7 @@ block body
 
 			div.blog-content!= content
 
-			if tags
+			if tags && tags.length
 				.tags-container
 					include helpers/tagIcon
 					each tag in tags
