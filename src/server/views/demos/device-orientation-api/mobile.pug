@@ -53,9 +53,9 @@ html(lang='en')
                 if (response == "granted") {
                     window.addEventListener("deviceorientation", function(e) {
                         const { alpha, beta, gamma } = e;
-                        document.getElementById("alpha").innerText = alpha;
-                        document.getElementById("beta").innerText = beta;
-                        document.getElementById("gamma").innerText = gamma;
+                        document.getElementById("alpha").innerText = alpha.toFixed(0);
+                        document.getElementById("beta").innerText = beta.toFixed(0);
+                        document.getElementById("gamma").innerText = gamma.toFixed(0);
                     });
                 } else {
                     alert('Device orientation permission not granted');
