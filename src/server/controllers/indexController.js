@@ -58,8 +58,11 @@ router
     .get('/demos/device-orientation-api-desktop', (req, res) => {
         return res.render('demos/device-orientation-api/desktop');
     })
-    .get('/demos/device-motion-event-mobile', (req, res) => {
+    .get('/demos/device-orientation-api-mobile', (req, res) => {
         return res.render('demos/device-orientation-api/mobile');
+    })
+    .get('/demos/device-motion-event-mobile', (req, res) => {
+        return res.render('demos/device-motion-event/mobile');
     })
     .get('/travelog', (req, res) => res.render('travelog'));
 

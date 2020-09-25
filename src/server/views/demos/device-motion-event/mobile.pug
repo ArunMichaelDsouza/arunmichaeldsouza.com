@@ -4,7 +4,7 @@ html(lang='en')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    title Device Orientation API Mobile Demo
+    title Device Motion Event Mobile Demo
     style.
         html,
         body {
@@ -29,40 +29,40 @@ html(lang='en')
         }
   body
     h1
-      | Device Orientation API Mobile Demo
+      | Device Motion Event Mobile Demo
     div
       button#button
-        | Request Permission to Access Device Orientation Data
+        | Request Permission to Access Device Motion Data
     div
       h4
-        | Alpha:
-      p#alpha
+        | X:
+      p#x
     div
       h4
-        | Beta:
-      p#beta
+        | Y:
+      p#y
     div
       h4
-        | Gamma:
-      p#gamma
+        | Z:
+      p#z
     script.
       document.getElementById("button").onclick = function() {
-        if (DeviceOrientationEvent.requestPermission) {
-            DeviceOrientationEvent.requestPermission()
+        if (DeviceMotionEvent.requestPermission) {
+            DeviceMotionEvent.requestPermission()
             .then(response => {
                 if (response == "granted") {
-                    window.addEventListener("deviceorientation", function(e) {
-                        const { alpha, beta, gamma } = e;
-                        document.getElementById("alpha").innerText = alpha.toFixed(0);
-                        document.getElementById("beta").innerText = beta.toFixed(0);
-                        document.getElementById("gamma").innerText = gamma.toFixed(0);
+                    window.addEventListener("devicemotion", function(e) {
+                        const { acceleration } = e;
+                        document.getElementById("x").innerText = acceleration.x.toFixed(0);
+                        document.getElementById("y").innerText = acceleration.y.toFixed(0);
+                        document.getElementById("z").innerText = acceleration.z.toFixed(0);
                     });
                 } else {
-                    alert('Device orientation permission not granted');
+                    alert('Device motion permission not granted');
                 }
             })
             .catch(console.log);
         } else {
-            alert("Device orientation permission access method not available");
+            alert("Device motion permission access method not available");
         }
       };
