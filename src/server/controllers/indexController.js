@@ -55,6 +55,12 @@ router
             .then(blogs => res.render('blog', { blogs, pageHeading, tag }))
             .catch(err => res.status(500).send('Some error occurred'));
     })
+    .get('/demos/device-orientation-api-desktop', (req, res) => {
+        return res.render('demos/device-orientation-api/desktop');
+    })
+    .get('/demos/device-orientation-api-mobile', (req, res) => {
+        return res.render('demos/device-orientation-api/mobile');
+    })
     .get('/travelog', (req, res) => res.render('travelog'));
 
 module.exports = router;
