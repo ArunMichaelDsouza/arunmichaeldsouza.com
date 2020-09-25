@@ -51,7 +51,7 @@ block body
 				| Published on 
 				span!= date.toDateString()
 
-			if tags
+			if tags && tags.length
 				.tags-container
 					include helpers/tagIcon
 					each tag in tags
