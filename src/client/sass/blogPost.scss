@@ -26,6 +26,13 @@
     }
 }
 
+.blog-gif {
+    width: 30%;
+    @media screen and (max-width: $tabletWidth) {
+        width: 50%;
+	}
+}
+
 .tags-container {
     margin: -25px auto 25px;
 }
