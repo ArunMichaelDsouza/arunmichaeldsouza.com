@@ -31,5 +31,17 @@
                 width: 70%;
             }
         }
+        .col-80 {
+            @media (min-width: 768px) {
+                float: left;
+                width: 80%;
+            }
+        }
+        .col-20 {
+            @media (min-width: 768px) {
+                float: left;
+                width: 20%;
+            }
+        }
     }
 }

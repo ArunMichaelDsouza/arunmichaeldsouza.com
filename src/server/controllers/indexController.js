@@ -4,13 +4,15 @@ const router = require('express').Router({ mergeParams: false }),
     Talk = require('../models/Talk'),
     Blog = require('../models/Blog'),
     Project = require('../models/Project'),
+    Tag = require('../models/Tag'),
     Promise = require('bluebird');
 
 router
-    .get('/', (req, res) => {
-        return Talk.find().sort({ eventDate: -1 })
-            .then(talks => res.render('index', { talks }))
-            .catch(err => res.status(500).send('Some error occurred'));
+    .get('/about', (req, res) => {
+        return res.render('index');
+    })
+    .get('/privacy-policy', (req, res) => {
+        return res.render('privacyPolicy');
     })
     .get('/talks', (req, res) => {
         return Talk.find().sort({ eventDate: -1 })
@@ -22,10 +24,15 @@ router
             .then(projects => res.render('openSource', { projects }))
             .catch(err => res.status(500).send('Some error occurred'));
     })
-    .get('/blog', (req, res) => {
-        return Blog.find({ published: true }).sort({ date: -1 })
-            .then(blogs => res.render('blog', { blogs }))
+    .get('/', (req, res) => {
+        return Promise.all([Blog.find({ published: true }).sort({ date: -1 }), Tag.find()])
+            .then(([blogs, tags]) => {
+                return res.render('blog', { blogs, tags });
+            })
             .catch(err => res.status(500).send('Some error occurred'));
+    })
+    .get('/blog', (req, res) => {
+        return res.redirect('/');
     })
     .get('/blog/:blogUrl', (req, res) => {
         return Blog.findOne({ url: req.params.blogUrl })
