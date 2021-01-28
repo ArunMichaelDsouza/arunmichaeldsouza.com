@@ -162,6 +162,8 @@ router
                 const tagsAddedDefault = tagsAdded || [];
                 const tagsDifference = tags.filter(tag => !tagsAddedDefault.includes(tag.title));
 
+                console.log(tagsDifference);
+
                 return res.render('cms/editor', {
                     blogTitle,
                     blogContent: btoa(blogContent),
