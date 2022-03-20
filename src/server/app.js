@@ -47,3 +47,8 @@ db.once('open', () => {
     console.log('Successfully connected to MongoDB');
     return startServer();
 });
+
+process.on('unhandledRejection', error => {
+    // Will print "unhandledRejection err is not defined"
+    console.log(error.message);
+  });
