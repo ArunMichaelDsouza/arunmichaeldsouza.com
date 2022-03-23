@@ -14,6 +14,12 @@ const Index = ({ posts, title, description, ...props }) => {
           width: 100%;
           height: auto;
         }
+        .grid .row .col-80 {
+          width: 100%;
+        }
+        .content-wrapper {
+          width: 70%;
+        }
       `,
         }}
       />
