@@ -1,0 +1,68 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Device Orientation API Mobile Demo
+    style.
+        html,
+        body {
+            font-family: sans-serif;
+        }
+        h1,
+        h4 {
+            font-weight: 400;
+            display: inline-block;
+        }
+        p {
+            font-weight: 300;
+            display: inline-block;
+        }
+        button {
+            background-color: #419af5;
+            padding: 20px;
+            color: #ffffff;
+            font-size: 16px;
+            border-radius: 40px;
+            border: none;
+        }
+  body
+    h1
+      | Device Orientation API Mobile Demo
+    div
+      button#button
+        | Request Permission to Access Device Orientation Data
+    div
+      h4
+        | Alpha:
+      p#alpha
+    div
+      h4
+        | Beta:
+      p#beta
+    div
+      h4
+        | Gamma:
+      p#gamma
+    script.
+      document.getElementById("button").onclick = function() {
+        if (DeviceOrientationEvent.requestPermission) {
+            DeviceOrientationEvent.requestPermission()
+            .then(response => {
+                if (response == "granted") {
+                    window.addEventListener("deviceorientation", function(e) {
+                        const { alpha, beta, gamma } = e;
+                        document.getElementById("alpha").innerText = alpha.toFixed(0);
+                        document.getElementById("beta").innerText = beta.toFixed(0);
+                        document.getElementById("gamma").innerText = gamma.toFixed(0);
+                    });
+                } else {
+                    alert('Device orientation permission not granted');
+                }
+            })
+            .catch(console.log);
+        } else {
+            alert("Device orientation permission access method not available");
+        }
+      };

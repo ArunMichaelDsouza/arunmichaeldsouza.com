@@ -1,0 +1,45 @@
+// Blog post styles
+
+@import './helpers/normalize';
+@import './helpers/variables';
+@import './helpers/base';
+@import './components/content';
+@import './components/blog';
+@import './components/header';
+@import './components/footer';
+@import './components/nav';
+@import './components/grid';
+@import './components/listItem';
+
+.more-blogs {
+    & > .sub-text {
+        margin: 0 0 20px -15px;
+        border-bottom: 1px solid $blue;
+        display: inline-block;
+        padding-bottom: 10px;
+        color: $black;
+        font-weight: 700;
+    }
+    & .list-item {
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.blog-content figure img.blog-gif {
+    width: 30%;
+    @media screen and (max-width: $tabletWidth) {
+        width: 50%;
+	}
+}
+
+.tags-container {
+    margin: -25px auto 25px;
+}
+
+.blog-tag {
+    vertical-align: super;
+    margin-right: 8px;
+}

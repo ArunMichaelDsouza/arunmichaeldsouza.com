@@ -1,0 +1,45 @@
+// Info panel styles
+
+.info-panel {
+    & > h2 {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    & > p {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+    & img {
+        vertical-align: middle;
+		margin-right: 5px;
+    }
+    margin-bottom: 40px;
+    border-bottom: 1px solid $blue;
+    &.split {
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+        border-bottom: none;
+        box-sizing: border-box;
+        & > p:last-child {
+            border-bottom: 1px solid $blue;
+        }
+        img {
+            max-width: 100%;
+            height: 200px;
+            @media screen and (max-width: $tabletWidth) {
+                max-width: 200px;
+                height: auto;
+            }
+        }
+        & .desc {
+            min-height: 120px;
+            @media screen and (max-width: $tabletWidth) {
+                min-height: auto;
+            }
+        }
+        @media screen and (max-width: $tabletWidth) {
+            width: 100%;
+        }
+    }
+}

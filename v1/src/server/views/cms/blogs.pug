@@ -1,0 +1,60 @@
+//- Blogs menu template
+
+extends ../helpers/base
+
+block title
+	- var title = "CMS - Blogs"
+	- var subTitle = "Manage all the blogs"
+
+block append meta
+	meta(name="robots" content="noindex")
+
+block append css
+	link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/CSS-Mint/2.0.6/css-mint.min.css")
+	link(rel="stylesheet" href="/css/cms.min.css")
+	style.
+		.item-list > li {
+			background-color: #eee;
+			padding: 15px;
+			border-radius: 3px;
+			margin-bottom: 15px;
+		}
+		form {
+			display: inline-block;
+			margin-left: 15px;
+		}
+
+block body
+	include cmsHeader
+	.cm-text-center
+		a(href="javascript:window.history.back()") Go back
+	.cm-grid
+		.cm-row
+			include logoutButton
+			.cm-col-md-4
+				.cm-card.card-bg
+					.cm-card-header Add a blog
+					.cm-card-body
+						a(href="/cms/blogs/editor" style="display: inline-block;").cm-text-center.cm-btn.primary Go to editor
+			.cm-col-md-8
+				.cm-card.card-bg
+					.cm-card-header All blogs
+					.cm-card-body
+						ul.ul-reset.item-list
+							each blog in blogs
+								li 
+									h2 #{blog.title}
+									div
+										label.cm-text-bold Date - 
+										span #{blog.date}
+									div
+										label.cm-text-bold URL - 
+										a(target="_blank" href=`/blog/${blog.url}`) /blog/#{blog.url}
+									div
+										label.cm-text-bold Published - 
+										span #{blog.published}
+									.cm-text-right
+										a(href=`/cms/blogs/editor/${blog._id}`).cm-btn.primary Edit
+										form(action="/cms/blogs/delete" method="post")
+											input(type="hidden" value=blog._id name="id")
+											button.cm-btn.error Delete

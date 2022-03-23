@@ -1,0 +1,68 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Device Motion Event Mobile Demo
+    style.
+        html,
+        body {
+            font-family: sans-serif;
+        }
+        h1,
+        h4 {
+            font-weight: 400;
+            display: inline-block;
+        }
+        p {
+            font-weight: 300;
+            display: inline-block;
+        }
+        button {
+            background-color: #419af5;
+            padding: 20px;
+            color: #ffffff;
+            font-size: 16px;
+            border-radius: 40px;
+            border: none;
+        }
+  body
+    h1
+      | Device Motion Event Mobile Demo
+    div
+      button#button
+        | Request Permission to Access Device Motion Data
+    div
+      h4
+        | X:
+      p#x
+    div
+      h4
+        | Y:
+      p#y
+    div
+      h4
+        | Z:
+      p#z
+    script.
+      document.getElementById("button").onclick = function() {
+        if (DeviceMotionEvent.requestPermission) {
+            DeviceMotionEvent.requestPermission()
+            .then(response => {
+                if (response == "granted") {
+                    window.addEventListener("devicemotion", function(e) {
+                        const { acceleration } = e;
+                        document.getElementById("x").innerText = acceleration.x.toFixed(0);
+                        document.getElementById("y").innerText = acceleration.y.toFixed(0);
+                        document.getElementById("z").innerText = acceleration.z.toFixed(0);
+                    });
+                } else {
+                    alert('Device motion permission not granted');
+                }
+            })
+            .catch(console.log);
+        } else {
+            alert("Device motion permission access method not available");
+        }
+      };
