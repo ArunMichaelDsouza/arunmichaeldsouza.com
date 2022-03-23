@@ -1,0 +1,56 @@
+// Index page styles
+
+@import './helpers/normalize';
+@import './helpers/variables';
+@import './helpers/base';
+@import './components/header';
+@import './components/nav';
+@import './components/footer';
+@import './components/content';
+@import './components/talks';
+
+.content-wrapper {
+  width: 45%;
+  @media screen and (max-width: $tabletWidth) {
+    width: 100%;
+  }
+}
+
+.main-img > source,
+.main-img > img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-shadow: 4px 4px 0px $blue;
+}
+
+.intro-text {
+  margin: 0 auto;
+  p {
+    text-align: left;
+    a {
+      margin-right: 0;
+    }
+  }
+  @media screen and (max-width: $tabletWidth) {
+    width: 100%;
+  }
+}
+
+.page-secondary-title {
+  margin: 0;
+  & svg {
+    color: $blue;
+    width: 12px;
+    height: auto;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+}
+
+.intro-text,
+.talks-links {
+  a {
+    margin: 0 8px 0 0;
+  }
+}

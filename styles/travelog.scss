@@ -1,0 +1,13 @@
+// Travelog page styles
+
+@import './helpers/normalize';
+@import './helpers/variables';
+@import './helpers/base';
+@import './components/header';
+@import './components/content';
+
+.travelog-map {
+	width: 100%;
+	height: 480px;
+	background-color: #ddd;
+}
