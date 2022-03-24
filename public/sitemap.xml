@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"> 
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/about</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/talks</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/open-source</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/web-platform's-hidden-gems---shape-detection-api</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/web-platform's-hidden-gems---battery-status-api</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/building-the-brxlz-liverpool-fc-anfield-stadium</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/web-platform's-hidden-gems---device-orientation-api</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/web-platform's-hidden-gems---gamepad-api</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/web-platform's-hidden-gems-(series)</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/using-joypad.js-for-a-better-gaming-experience-on-the-web</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/loading-images-gracefully-with-react-image-appear</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/easy-json-logging-in-node-js-using-woodlot</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/aliasing-module-paths-in-node-js</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/updating-state-of-a-parentless-component-in-react</loc>
+</url>
+<url>
+  <loc>https://dapper-dango-0d20b7.netlify.app/blog/getting-started-with-react-16</loc>
+</url>
+</urlset>
