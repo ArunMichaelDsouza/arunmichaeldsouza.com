@@ -4,7 +4,7 @@ url: "web-platform's-hidden-gems---shape-detection-api"
 date: 'Mon Feb 04 2021'
 metaDescription: "A few months back I started the Web platform's hidden gems blog series. The idea behind the series is to cover the native API enhancements to the web platform and shed some light on how these APIs can be used to create some really interesting experiences on the web. Even though these APIs are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Having said that, I feel that it's important for developers to know about these specifications and understand the possibilities that the native web has to offer! In the previous blog post, I explained the Battery Status API, using which developers can fetch information about the system's battery charge levels and use it in web applications to make adjustments to resource usage. Feel free to read through it and try it out if you'd like. This is the fourth blog post of the series and in this post, I'll be talking about the Shape Detection API."
 metaKeywords: 'Face detection javascript, text detection javascript, barcode detection javascript, QR code detection javascript, shape detection API, facial tagging, facial recognition javascript, artificial intelligence, machine learning, opencv, web platform, web development'
-metaImage: 'https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems---shape-detection-api/1.png'
+metaImage: "https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems---shape-detection-api/1.png"
 ---
 
 ![](/img/blogs/web-platform's-hidden-gems---shape-detection-api/1.png)

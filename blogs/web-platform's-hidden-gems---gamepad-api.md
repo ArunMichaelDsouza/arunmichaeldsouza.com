@@ -4,7 +4,7 @@ url: "web-platform's-hidden-gems---gamepad-api"
 date: 'Sun Jun 14 2020'
 metaDescription: "A few weeks back I started the Web Platform’s hidden gems blog series. The idea behind the series is to cover the native API enhancements to the web platform and shed some light on how these APIs can be used to create some really interesting experiences on the web. Even though these APIs are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Having said that, I feel that it's important for developers to know about these specifications and understand the possibilities that the native web has to offer! This is the first blog post of the series and in this post, I'll be talking about the Gamepad API."
 metaKeywords: 'gamepad, gaming, joypad, gamepad api, game development, gamer, game design, unity 3d, unreal engine, javascript, playstation, xbox, ps4'
-metaImage: 'https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems---gamepad-api/1.png'
+metaImage: "https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems---gamepad-api/1.png"
 ---
 
 ![](/img/blogs/web-platform's-hidden-gems---gamepad-api/1.png)

@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import PostList from '../components/PostList';
 
-const Index = ({ posts, title, description, ...props }) => {
+const Index = ({ blogs, title, description, ...props }) => {
   const metaTitle = 'Arun Michael Dsouza';
   const metaDescription = 'Ramblings on web development, JavaScript, open source and tech in general.';
   const metaKeywords = 'blog, personal website, technology blog, personal blog';
@@ -60,7 +60,7 @@ const Index = ({ posts, title, description, ...props }) => {
                     Ramblings on <span>programming</span>, <span>open source</span>, <span>game development</span>,{' '}
                     <span>construction toys </span>and <span>tech </span>in general.
                   </div>
-                  <PostList posts={posts} />
+                  <PostList blogs={blogs} />
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default Index;
 export async function getStaticProps() {
   const configData = await import(`../siteconfig.json`);
 
-  const posts = ((context) => {
+  const blogs = ((context) => {
     const keys = context.keys();
     const values = keys.map(context);
 
@@ -91,11 +91,11 @@ export async function getStaticProps() {
       };
     });
     return data;
-  })(require.context('../posts', true, /\.md$/));
+  })(require.context('../blogs', true, /\.md$/));
 
   return {
     props: {
-      posts,
+      blogs,
       title: configData.default.title,
       description: configData.default.description,
     },

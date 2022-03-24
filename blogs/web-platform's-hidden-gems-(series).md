@@ -4,7 +4,7 @@ url: "web-platform's-hidden-gems-(series)"
 date: 'Tue Mar 24 2020'
 metaDescription: "The web has certainly grown a lot over the last half a decade and continues to grow at an enormous pace. The highlight of this explosive growth is the continuous addition of feature-rich APIs that enables developers to create much more interactive and efficient web applications. Enhancements such as GPU accelerated graphics/computation, lower-level APIs that provide better control and hardware access not only allow developers to cater to a wider spectrum of users but also to support various other platforms and use cases. This makes the web portable and extensible in the true sense. Even though these specifications are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Looking beyond the JavaScript framework landscape, there are a lot of nifty features that the web platform offers natively and it's important for developers to know about these specifications and understand the possibilities that the native web has to offer!"
 metaKeywords: 'Web development, web api, web platform, native web, javascript api, javascript engine, javascript'
-metaImage: 'https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems-(series)/1.png'
+metaImage: "https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems-(series)/1.png"
 ---
 
 ![](</img/blogs/web-platform's-hidden-gems-(series)/1.png>)
