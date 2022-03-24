@@ -3,6 +3,8 @@ import Link from 'next/link';
 export default function PostList({ blogs }) {
   if (blogs === 'undefined') return null;
 
+  blogs = blogs.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+
   return (
     <div>
       {!blogs && <div>No blogs!</div>}

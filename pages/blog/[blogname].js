@@ -48,7 +48,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
         </div>
         <article className="content-wrapper">
           <h1 className="page-primary-title">
-            <Link href="/blog/undefined">
+            <Link href={blogUrl}>
               <a>{frontmatter.title}</a>
             </Link>
           </h1>

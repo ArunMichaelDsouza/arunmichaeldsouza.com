@@ -9,8 +9,6 @@ metaImage: "https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems--
 
 ![](/img/blogs/web-platform's-hidden-gems---gamepad-api/1.png)
 
-Image source - vecteezy.com
-
 A few weeks back I started the [Web platform's hidden gems](<https://arunmichaeldsouza.com/blog/web-platform's-hidden-gems-(series)>) blog series. The idea behind the series is to cover the native API enhancements to the web platform and shed some light on how these APIs can be used to create some really interesting experiences on the web.
 
 Even though these APIs are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Having said that, I feel that it's important for developers to know about these specifications and understand the possibilities that the native web has to offer!
@@ -29,8 +27,6 @@ The **gamepadconnected** event is emitted whenever a new gamepad is connected t
 
 ![](/img/blogs/web-platform's-hidden-gems---gamepad-api/2.png)
 
-Logging info of a connected gamepad
-
 The **window.navigator.getGamepads()** method returns an array of Gamepad objects, one for each gamepad connected to the device. The Gamepad API supports up to 4 simultaneous connections at the moment.
 
 If you log out the 0th index (the first connected gamepad) you can see the gamepad info -
@@ -43,8 +39,6 @@ The **gamepaddisconnected** event is emitted whenever a gamepad (which has previ
 
 ![](https://github.com/ArunMichaelDsouza/arunmichaeldsouza.com/raw/master/src/server/public/img/blogs/web-platform's-hidden-gems---gamepad-api/4.png)
 
-Logging info of a disconnected gamepad
-
 ## Tracking button press and axis movement
 
 Currently, the gamepad API only supports these two events - **gamepadconnected** and **gamepaddisconnected**. There is no standardized way to detect gamepad button presses or axis movements. The [Gamepad interface](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad) does return useful information about the gamepad buttons, axes and their current states (button press and axis movement values) but there is no actual event that is dispatched when these actions are performed by the user.
@@ -52,8 +46,6 @@ Currently, the gamepad API only supports these two events - **gamepadconnected**
 But there is a way to continuously **poll** for button and axis value changes using **[window.requestAnimationFrame()](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)** \-
 
 ![](https://github.com/ArunMichaelDsouza/arunmichaeldsouza.com/raw/master/src/server/public/img/blogs/web-platform's-hidden-gems---gamepad-api/5.png)
-
-Capturing button state changes using requestAnimationFrame()
 
 In the context of a video game, a **game loop** is something that continuously checks for user input, updates the game state and renders the scene. **requestAnimationFrame()** seems to be fitting well for this as we can perform all these operations in its callback and it would remain in sync with the repaint tasks in every frame.
 
@@ -68,8 +60,6 @@ That is the very reason why I created **[joypad.js](https://github.com/ArunMicha
 Subscribing to events is as simple as specifying an event name and a callback that is fired whenever the specified event is triggered.
 
 ![](https://github.com/ArunMichaelDsouza/arunmichaeldsouza.com/raw/master/src/server/public/img/blogs/web-platform's-hidden-gems---gamepad-api/6.png)
-
-Subscribing to an event using joypad.js
 
 For more details on how to use it or to know how it works under the hood (Spoiler alert: it uses the requestAnimationFrame() polling technique), please feel free to go to its [Github page](https://github.com/ArunMichaelDsouza/joypad.js).
 
@@ -88,8 +78,6 @@ As of now the Gamepad specification is a work in progress and was published by 
 The API itself is [supported by all modern browsers](https://caniuse.com/#search=gamepad).
 
 ![](https://github.com/ArunMichaelDsouza/arunmichaeldsouza.com/raw/master/src/server/public/img/blogs/web-platform's-hidden-gems---gamepad-api/8.png)
-
-Gamepad API browser support
 
 I would like to point out again that the Gamepad API is in very early stages so it may undergo major changes in terms of implementation and usage. But that shouldn't stop you from experimenting with it. So go ahead give it a try, add gamepad support to your existing games or maybe develop some new ones!
 

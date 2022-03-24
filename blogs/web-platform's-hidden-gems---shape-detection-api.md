@@ -9,8 +9,6 @@ metaImage: "https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems--
 
 ![](/img/blogs/web-platform's-hidden-gems---shape-detection-api/1.png)
 
-Image source - freepik.com
-
 A few months back I started the [**Web platform's hidden gems**](<https://arunmichaeldsouza.com/blog/web-platform's-hidden-gems-(series)>) blog series. The idea behind the series is to cover the native API enhancements to the web platform and shed some light on how these APIs can be used to create some really interesting experiences on the web.
 
 Even though these APIs are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Having said that, I feel that it's important for developers to know about these specifications and understand the possibilities that the native web has to offer!
@@ -40,17 +38,15 @@ The **window.FaceDetector** interface supports the following options -
 
 ![](/img/blogs/web-platform's-hidden-gems---shape-detection-api/2.png)
 
-Using the Face Detection API
-
 Each detected face consists of a **bounding box** that defines the exact location and extent of the face in the image, as well as **landmark locations** for facial features such as eyes, mouth and nose. The landmark locations contain an array of points defining the vertices of a simple polygon surrounding the feature.
 
 ![](/img/blogs/web-platform's-hidden-gems---shape-detection-api/3.png)
 
-Bounding box and landmark locations of the detected face
-
 As of now, the Face Detection API is available on Chrome and Opera behind the **Experimental Web Platform features** flag. You can enable it by going into **chrome://flags/#enable-experimental-web-platform-features** and selecting **Enabled**.
 
 I prepared a demo for the Face Detection API running on Chrome 88. Please feel free to check out the code below -
+
+[https://gist.github.com/ArunMichaelDsouza/ffe8b8eedf5909732a22907283f86430](https://gist.github.com/ArunMichaelDsouza/ffe8b8eedf5909732a22907283f86430)
 
 ## Barcode Detection API
 
@@ -64,11 +60,7 @@ In order to see which formats are actually supported by the Barcode Detection A
 
 ![](/img/blogs/web-platform's-hidden-gems---shape-detection-api/4.png)
 
-Getting the list of supported barcode formats for detection
-
 ![](/img/blogs/web-platform's-hidden-gems---shape-detection-api/5.png)
-
-Using the Barcode Detection API
 
 Each detected barcode consists of a **bounding box** that defines the exact location and extent of the barcode feature in the image. It also contains the X, Y coordinates of the **corner points** of the feature, the **format** of the barcode and the **raw value**.
 
@@ -79,6 +71,8 @@ Bounding box and other data of the detected barcode
 As of now, the Barcode Detection API is available by default starting in Chrome 83, Edge 83 and Opera 72.
 
 I prepared a demo for the Barcode Detection API running on Chrome 88. Please feel free to check out the code below -
+
+[https://gist.github.com/ArunMichaelDsouza/b29459609fdd4247a096e9e052ad99dc](https://gist.github.com/ArunMichaelDsouza/b29459609fdd4247a096e9e052ad99dc)
 
 ## Text Detection API
 
@@ -97,6 +91,8 @@ Bounding box and corner points of the detected text
 As of now, the Text Detection API is available on Chrome and Opera behind the **Experimental Web Platform features** flag. You can enable it by going into **chrome://flags/#enable-experimental-web-platform-features** and selecting **Enabled**.
 
 I prepared a demo for the Text Detection API running on Chrome 88. Please feel free to check out the code below -
+
+[https://gist.github.com/ArunMichaelDsouza/fc95a5fb574cb2295d2d092aa0c03fbf](https://gist.github.com/ArunMichaelDsouza/fc95a5fb574cb2295d2d092aa0c03fbf)
 
 > Note: It is advisable to reuse the same detector instance for several detections as it may allocate and hold significant system resources.
 

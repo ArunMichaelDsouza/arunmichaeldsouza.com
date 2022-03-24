@@ -25,8 +25,6 @@ Code should be easy to read and understand. And with the current module systems 
 
 ![](/img/blogs/aliasing-module-paths-in-node-js/2.png)
 
-Relative path hell
-
 ## The Solution
 
 There might be a possible solution to this "relative path hell" problem -
@@ -49,8 +47,6 @@ Simply add the required module aliases into your project's **package.json** fil
 
 ![](/img/blogs/aliasing-module-paths-in-node-js/3.png)
 
-Sample configuration for link-module-alias in package.json
-
 After your configuration is complete, simply run -
 
 **npm install** \- Installs your project's dependencies and automatically executes the postinstall script.
@@ -63,13 +59,9 @@ Once the postinstall script executes, it makes a call to link-module-alias which
 
 ![](/img/blogs/aliasing-module-paths-in-node-js/4.png)
 
-Symlinks created by link-module-alias
-
 Now whenever you are requiring your modules, you can simply do this -
 
 ![](/img/blogs/aliasing-module-paths-in-node-js/5.png)
-
-No more relative path hell
 
 No matter where you are in your project tree, all your aliased modules will resolve successfully.
 
@@ -79,8 +71,6 @@ If you happen to use [VS Code](https://code.visualstudio.com/) then all of your
 
 ![](/img/blogs/aliasing-module-paths-in-node-js/6.png)
 
-Module alias autocompletion in VS Code
-
 Another plus point to be mentioned here is that this particular approach doesn't need any runtime hooks in your app's entry point, unlike other approaches to solve this problem which rely on runtime hooks. Runtime hooks add a level of unnecessary computation and complexity to your app. If by any chance a runtime hook fails, it might crash your entire app.
 
 ## Update (2021): Subpath Imports
@@ -89,12 +79,12 @@ Support for [subpath imports](https://nodejs.org/api/packages.html#subpath-impor
 
 ![](/img/blogs/aliasing-module-paths-in-node-js/7.png)
 
-Node JS subpath imports
-
 ## Other solutions
 
-1.  **module-alias  
-    **If you have no issues with require hooks then you can consider this package - [module-alias](https://github.com/ilearnio/module-alias). There are a few gotchas though that you'll need to keep in mind while using this package. For example, this package **modifies the default require behavior!** And should be used with caution.
+1.  **module-alias**
+
+    If you have no issues with require hooks then you can consider this package - [module-alias](https://github.com/ilearnio/module-alias). There are a few gotchas though that you'll need to keep in mind while using this package. For example, this package **modifies the default require behavior!** And should be used with caution.
+
 2.  **Yarn Workspaces**  
     [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/), in particular, cater to JavaScript projects which have multiple internal packages (also called workspaces) as dependencies. Each workspace has its own dependencies and can be linked to the global workspace for easy access.
 3.  **Webpack Resolve**  

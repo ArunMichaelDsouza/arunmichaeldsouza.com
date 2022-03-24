@@ -75,8 +75,6 @@ componentDidCatch returns two parameters - an **error** object which gives you t
 
 ![](/img/blogs/getting-started-with-react-16/6.gif)
 
-How Error Boundaries work
-
 Few things to note here -
 
 Errors in **all lifecycle methods** can be caught by an Error Boundary, including the **constructor** method.
@@ -95,11 +93,7 @@ Once an error occurs, **error stack trace** and **component stack data** are log
 
 ![](/img/blogs/getting-started-with-react-16/7.png)
 
-Error stack trace returned by an Error Boundary
-
 ![](/img/blogs/getting-started-with-react-16/8.png)
-
-Component stack data returned by an Error Boundary
 
 But is there really a need to unmount the whole React component tree ? Well, the React team has debated this decision, and in their experience it is worse to leave corrupted UI in place than to completely remove it. Read more about it [here](https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html#new-behavior-for-uncaught-errors).
 
@@ -143,13 +137,9 @@ In the past, React used to ignore unknown DOM attributes. If you wrote JSX with 
 
 ![](/img/blogs/getting-started-with-react-16/12.png)
 
-Custom DOM attributes in React 16
-
 Note that you should still use the canonical React naming for known attributes -
 
 ![](/img/blogs/getting-started-with-react-16/13.png)
-
-Canonical naming convention in React
 
 ### Attributes whitelist
 
@@ -157,15 +147,11 @@ Previous versions of React used to have an attributes whitelist, which contained
 
 ![](/img/blogs/getting-started-with-react-16/14.png)
 
-Attributes whitelist in React 15
-
 React 16 gets rid of this, so there's no more attribute matching with the whitelist resulting in smaller file sizes.
 
 ![](/img/blogs/getting-started-with-react-16/15.png)
 
 ![](/img/blogs/getting-started-with-react-16/16.png)
-
-React 16 support for custom attributes
 
 Custom attributes are handy if you need to use a non-standard attribute, or if you need to integrate with a third-party library that relies on such attributes. Just like before, React 16 also lets you use **data-** and **aria-** attributes with your components.
 
@@ -205,15 +191,11 @@ As stated in the blog post -
 
 ![](/img/blogs/getting-started-with-react-16/17.png)
 
-SSR improvements in React 16
-
 ## Reduced file size
 
 Despite all the new feature additions, React 16 is actually **smaller** as compared to 15.6.1!
 
 ![](/img/blogs/getting-started-with-react-16/18.png)
-
-Reduced file size in React 16
 
 The size difference is partly attributable to a change in packaging. React now uses Rollup to create flat bundles for each of it's different target formats, resulting in both size and runtime performance wins.
 

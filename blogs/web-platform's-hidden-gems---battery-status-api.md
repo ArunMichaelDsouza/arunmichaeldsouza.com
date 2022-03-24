@@ -9,8 +9,6 @@ metaImage: "https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems--
 
 ![](/img/blogs/web-platform's-hidden-gems---battery-status-api/1.png)
 
-Image source - icons8.com
-
 A few months back I started the [**Web platform's hidden gems**](<https://arunmichaeldsouza.com/blog/web-platform's-hidden-gems-(series)>) blog series. The idea behind the series is to cover the native API enhancements to the web platform and shed some light on how these APIs can be used to create some really interesting experiences on the web.
 
 Even though these APIs are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Having said that, I feel that it's important for developers to know about these specifications and understand the possibilities that the native web has to offer!
@@ -31,13 +29,9 @@ The Battery Status API exposes the **getBattery()** method on the navigator obj
 
 ![](/img/blogs/web-platform's-hidden-gems---battery-status-api/2.png)
 
-Logging out battery status information
-
 The returned data shows whether the system is being charged or not, what is the charge level or the percentage of the battery left and also returns some useful event handlers that can be used to detect certain changes in the battery usage.
 
 ![](/img/blogs/web-platform's-hidden-gems---battery-status-api/3.png)
-
-Battery status information
 
 ## Detecting change in charging level
 
@@ -45,13 +39,9 @@ The **levelchange** event type can be used to detect any changes in the chargin
 
 ![](/img/blogs/web-platform's-hidden-gems---battery-status-api/4.png)
 
-Logging out battery level change information
-
 The returned data shows the charging level which is a value between 0 and 1, multiply that by 100 and you have the battery percentage.
 
 ![](/img/blogs/web-platform's-hidden-gems---battery-status-api/5.png)
-
-Battery level change information
 
 ## Other event types
 
@@ -66,8 +56,6 @@ Battery level change information
 As mentioned above, the standard itself is in the process of being dropped due to privacy concerns. But it's still worth checking out what potentially would've been a nice addition to the web platform.
 
 ![](/img/blogs/web-platform's-hidden-gems---battery-status-api/6.png)
-
-Battery status API browser support
 
 You might be interested in the previous blog post about the [Device Orientation API](https://arunmichaeldsouza.com/blog/web-platform's-hidden-gems---device-orientation-api), using which developers can develop web applications with device orientation detection capabilities. Feel free to read through it and try it out as well if you'd like.🙂
 

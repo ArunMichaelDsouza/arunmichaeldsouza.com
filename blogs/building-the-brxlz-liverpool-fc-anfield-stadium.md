@@ -25,17 +25,11 @@ Since many of the pieces that come along are really small and can have different
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/2.png)
 
-Identifying pieces based on shape and color
-
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/3.png)
-
-Sorting pieces based on shape and color
 
 Once you have all the pieces sorted out, you can pick the ones required in a particular step and start placing them together.
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/4.png)
-
-Following the step by step manual
 
 ## Day 1
 
@@ -43,15 +37,11 @@ So I started off by setting up the foundation for the entire structure, this set
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/5.jpg)
 
-Day 1 progress
-
 ## Day 2
 
 The stairs have started to shape up and fresh grass has been laid out on the field. The groundwork for the seating area has also started.
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/6.JPG)
-
-Day 2 progress
 
 ## Day 3
 
@@ -59,15 +49,11 @@ The lower end of the seating area is complete and the exteriors of the stands ar
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/7.JPG)
 
-Day 3 progress
-
 ## Day 4
 
 The upper end of the seating area is starting to shape up and the entrance/exit tunnels are now complete.
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/8.JPG)
-
-Day 4 progress
 
 ## Day 5
 
@@ -75,15 +61,11 @@ The roof on the Kop end has been placed and the upper level seats are almost com
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/9.jpg)
 
-Day 5 progress
-
 ## Day 6
 
 With the seating area and the exteriors complete on all sides, its time to work on the roof structures. The roof on the Kop end has been extended and the base has been set up to place roofs on rest of the sides.
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/10.JPG)
-
-Day 6 progress
 
 ## Day 7
 
@@ -91,15 +73,11 @@ The roofs are starting to shape up with the Anfield road stand roof complete.
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/11.JPG)
 
-Day 7 progress
-
 ## Day 8
 
 The roof on the Sir Kenny Dalglish stand is now complete. The main stand's roof has been extended, on top of which the truss would be placed.
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/12.JPG)
-
-Day 8 progress
 
 ## Day 9
 
@@ -108,8 +86,6 @@ And its complete! Anfield stadium - home of Liverpool FC, the Premier League Cha
 With the roofs of the main stand and the Kop end in place. The truss and the extended roof have been put together to complete the massive main stand
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/13.JPG)
-
-Day 9 progress
 
 Here is the complete set with all the stickers placed - the LFC crest on the outside of the main stand, the Kop end and the Anfield sticker on the front.
 

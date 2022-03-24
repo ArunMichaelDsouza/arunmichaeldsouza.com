@@ -15,8 +15,6 @@ In this blog post we'll be looking at a React JS based component called [react-i
 
 ![](/img/blogs/loading-images-gracefully-with-react-image-appear/2.gif)
 
-Smooth image loading with react-image-appear
-
 ## What is react-image-appear ?
 
 It is a React JS component which makes images appear with transition as they load. It basically wraps an image within a placeholder element and adds a gif loader in between.
@@ -31,15 +29,9 @@ Apart from the required **src** prop there are various optional props that can b
 
 ![](/img/blogs/loading-images-gracefully-with-react-image-appear/3.gif)
 
-Using a custom loader with react-image-appear
-
 ![](/img/blogs/loading-images-gracefully-with-react-image-appear/4.gif)
 
-Using a custom placeholder with react-image-appear
-
 ![](/img/blogs/loading-images-gracefully-with-react-image-appear/5.gif)
-
-Using animations with react-image-appear
 
 This is the full props list -
 
@@ -61,9 +53,7 @@ This project has also been ported to AngularJS 1.x - [ng-image-appear](https://g
 
 react-image-appear is completely free to use and has been open sourced under the [MIT license](https://github.com/ArunMichaelDsouza/react-image-appear#license). For its long term sustenance and growth I recently launched a [Patreon page](https://www.patreon.com/arunmichaeldsouza)!
 
-If you or your company use react-image-appear or any of my other projects, or like what I'm doing, please consider backing me so I can continue maintaining and working on these projects and new ones. Your pledge could be as small as $1/month. I'd really appreciate your support! To become a patron kindly click this button -
-
-[![](/img/patreon.png)](https://www.patreon.com/bePatron?u=8841116)
+If you or your company use react-image-appear or any of my other projects, or like what I'm doing, please consider backing me so I can continue maintaining and working on these projects and new ones. Your pledge could be as small as $1/month. I'd really appreciate your support!
 
 That's it for now! If you have any questions or suggestions, don't forget to leave a comment down below. Also, feel free to say hi 👋 to me on [Twitter](https://twitter.com/amdsouza92) and [Github](https://github.com/ArunMichaelDsouza).
 

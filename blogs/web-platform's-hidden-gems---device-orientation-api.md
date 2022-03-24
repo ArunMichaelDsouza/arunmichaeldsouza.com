@@ -9,8 +9,6 @@ metaImage: "https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems--
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/1.png)
 
-Image source - dev.opera.com
-
 A few months back I started the [Web platform's hidden gems](<https://arunmichaeldsouza.com/blog/web-platform's-hidden-gems-(series)>) blog series. The idea behind the series is to cover the native API enhancements to the web platform and shed some light on how these APIs can be used to create some really interesting experiences on the web.
 
 Even though these APIs are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Having said that, I feel that it's important for developers to know about these specifications and understand the possibilities that the native web has to offer!
@@ -35,8 +33,6 @@ The **deviceorientation** event is emitted whenever a significant change in ori
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/2.png)
 
-Logging out change in orientation
-
 ## 3-dimensional coordinate system
 
 To use the values returned by the events we need to understand the **3-dimensional coordinate system** used by device orientation -
@@ -47,33 +43,23 @@ To use the values returned by the events we need to understand the **3-dimension
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/3.png)
 
-Image source - dev.opera.com
-
 Device orientation defines the following rotations along the 3 axes -
 
 - The rotation around the **Z-axis** is called **Alpha**.
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/4.png)
 
-Image source - dev.opera.com
-
 - The rotation around the **X-axis** is called **Beta**.
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/5.png)
-
-Image source - dev.opera.com
 
 - The rotation around the **Y-axis** is called **Gamma**.
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/6.png)
 
-Image source - dev.opera.com
-
 The change in orientation returned by the event is expressed in terms of these values - **Alpha**, **Beta** and **Gamma**.
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/7.png)
-
-Data returned by the device orientation event
 
 Using these values we can determine the change in rotation with respect to the 3 axes.
 
@@ -85,15 +71,11 @@ To launch the simulator, simply open the dev tools window and press **Command+Sh
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/8.gif)
 
-Chrome dev tools device orientation simulator
-
 On actual mobile devices, it's rather different. Most mobile browsers don't allow access to sensor data due to security reasons. It can only be made available for use by the web page after the user has granted permission to access the data.
 
 For requesting user permission to access the orientation data, the [Permissions API](https://www.w3.org/TR/permissions/) can be used as follows -
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/9.png)
-
-Requesting user permission to access orientation data
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/10.gif)
 
@@ -101,18 +83,11 @@ Requesting user permission to access orientation data
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/12.gif)
 
-You can try these demos out by yourself to see how the coordinate values behave when the device orientation event is fired -
-
-- [Device orientation API demo (Desktop)](https://arunmichaeldsouza.com/demos/device-orientation-api-desktop) - using chrome dev tools orientation simulator
-- [Device orientation API demo (Mobile)](https://arunmichaeldsouza.com/demos/device-orientation-api-mobile)
-
 ## Detecting device motion
 
 Similarly, there's the **devicemotion** event that can help us to determine how fast the device is accelerating.
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/13.png)
-
-Logging out change in acceleration
 
 The device motion event uses the same 3-dimensional coordinate system and provides acceleration values with respect to the 3 axes.
 
@@ -124,27 +99,17 @@ The event object returns the following information -
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/14.png)
 
-Logging out acceleration in the 3 axes
-
 For requesting user permission to access the motion data, we can again use the Permissions API as follows -
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/15.png)
 
-Requesting user permission to access motion data
-
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/16.gif)
-
-You can try this demo out by yourself to see how the acceleration values behave when the device motion event is fired -
-
-- [Device motion event demo (Mobile)](https://arunmichaeldsouza.com/demos/device-motion-event-mobile)
 
 ## Browser support
 
 As of now, the API is a work in progress and is subject to change but the events themselves are supported by all modern browsers.
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/17.png)
-
-Device orientation and motion events browser support
 
 I would like to point out again that this specification is in very early stages so it may undergo major changes in terms of implementation and usage. But that shouldn't stop you from experimenting with it. So go ahead and give it a try!
 
