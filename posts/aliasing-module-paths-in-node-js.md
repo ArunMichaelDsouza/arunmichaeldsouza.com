@@ -2,6 +2,9 @@
 title: 'Aliasing module paths in Node JS'
 url: 'aliasing-module-paths-in-node-js'
 date: 'Fri Jan 04 2019'
+metaDescription: "Typing out long and error-prone paths to your Node JS modules can be a daunting task! Even with code-completion features like IntelliSense in place (which is supported by almost every IDE or text editor), this can become more challenging as your codebase grows. Just imagine changing the directory structure of your project and you're forced to change all occurrences of the modules currently being referenced multiple times throughout your project. It's a maintenance nightmare! Moreover, it looks damn ugly! Code should be easy to read and understand. And with the current module systems in Node JS or JavaScript in general, this can turn out to be a problem since these systems don't have native support for meaningful referencing. An alias to a module path clearly indicates the location and purpose of the module being used. Dots and slashes hardly tell anything!"
+metaKeywords: 'module aliasing, babel, webpack, javascript, nodejs, symlinks, vscode, javascript development, javascript frameworks'
+metaImage: 'https://arunmichaeldsouza.com/img/blogs/aliasing-module-paths-in-node-js/1.png'
 ---
 
 ![](/img/blogs/aliasing-module-paths-in-node-js/1.png)

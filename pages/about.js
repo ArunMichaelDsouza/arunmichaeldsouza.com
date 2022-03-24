@@ -1,10 +1,35 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const About = ({ title, description, ...props }) => {
+  const metaTitle = 'About | Arun Michael Dsouza';
+  const metaDescription =
+    'Computer programmer from India currently building enterprise products for the web. Tech speaker, open source software author and contributor.';
+  const metaKeywords = 'blog, personal website, technology blog, personal blog, portfolio';
+  const metaURL = 'https://arunmichaeldsouza.com/about';
+  const metaImage = 'https://arunmichaeldsouza.com/img/arun-michael-dsouza.png';
+
   return (
     <>
-      <Layout pageTitle={`${title} | About`} description={description}>
+      <Head>
+        <meta name="description" content={metaDescription} />
+        <meta name="keywords" content={metaKeywords} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:url" content={metaURL} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={metaImage} />
+        <meta itemprop="name" content={metaTitle} />
+        <meta itemprop="description" content={metaDescription} />
+        <meta itemprop="image" content={metaImage} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@amdsouza92" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:creator" content="@amdsouza92" />
+        <meta name="twitter:image:src" content={metaImage} />
+      </Head>
+      <Layout pageTitle={metaTitle} description={metaDescription}>
         <style
           dangerouslySetInnerHTML={{
             __html: `

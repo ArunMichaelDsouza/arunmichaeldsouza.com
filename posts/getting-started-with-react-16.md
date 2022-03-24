@@ -2,6 +2,9 @@
 title: 'Getting started with React 16'
 url: 'getting-started-with-react-16'
 date: 'Mon Nov 13 2017'
+metaDescription: 'It’s been some time since Facebook released React 16.  The new release has a lot of new features to facilitate the designing of robust components and enhancements to speed up the rendering pipeline.'
+metaKeywords: 'javascript, react16, react, es6, reactjs'
+metaImage: 'http://arunmichaeldsouza.com/img/blogs/getting-started-with-react-16/1.png'
 ---
 
 ![](/img/blogs/getting-started-with-react-16/1.png)

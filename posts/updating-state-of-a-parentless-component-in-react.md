@@ -2,6 +2,9 @@
 title: 'Updating state of a parentless component in React'
 url: 'updating-state-of-a-parentless-component-in-react'
 date: 'Thu Dec 28 2017'
+metaDescription: 'State is the fundamental way to store and retrieve your React application’s data. It’s nothing but a JavaScript object, which React allows you to update via the setState() method.'
+metaKeywords: 'javascript, react, reactjs, javascript development, javascript frameworks'
+metaImage: 'http://arunmichaeldsouza.com/img/blogs/updating-state-of-a-parentless-component-in-react/1.png'
 ---
 
 ![](/img/blogs/updating-state-of-a-parentless-component-in-react/1.png)

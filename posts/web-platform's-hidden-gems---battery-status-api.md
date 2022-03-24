@@ -2,6 +2,9 @@
 title: "Web platform's hidden gems - Battery Status API"
 url: "web-platform's-hidden-gems---battery-status-api"
 date: 'Thu Jan 28 2021'
+metaDescription: "A few months back I started the Web platform's hidden gems blog series. The idea behind the series is to cover the native API enhancements to the web platform and shed some light on how these APIs can be used to create some really interesting experiences on the web. Even though these APIs are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Having said that, I feel that it's important for developers to know about these specifications and understand the possibilities that the native web has to offer! In the previous blog post, I explained the Device Orientation API, using which developers can develop web applications with device orientation detection capabilities. This can be really useful for a variety of use cases like gaming - for controlling a character or an object and even for gesture recognition in web applications for enhanced accessibility. Feel free to read through it and try it out if you'd like.This is the fourth blog post of the series and in this post, I'll be talking about the Battery Status API."
+metaKeywords: 'battery, power, battery API, web platform, power management, resource, energy, web development'
+metaImage: 'https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems---battery-status-api/1.png'
 ---
 
 ![](/img/blogs/web-platform's-hidden-gems---battery-status-api/1.png)

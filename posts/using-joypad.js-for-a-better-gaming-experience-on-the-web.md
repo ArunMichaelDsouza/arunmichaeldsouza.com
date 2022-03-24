@@ -2,6 +2,9 @@
 title: 'Using joypad.js for a better gaming experience on the web'
 url: 'using-joypad.js-for-a-better-gaming-experience-on-the-web'
 date: 'Wed Dec 12 2019'
+metaDescription: "I still vividly remember playing games on my PC, the times when detailed polygon models weren't a thing, open worlds were small and well, not that open (to be very honest) and online multiplayer gaming was still underway. For most games, controls mapped to a standard keyboard were fine to play with. But for games with more complex controls, it was just more viable to switch to a standard gamepad."
+metaKeywords: 'gamepad, gaming, joypad, gamepad api, game development, gamer, game design, unity 3d, unreal engine, javascript, playstation, xbox, ps4'
+metaImage: 'https://arunmichaeldsouza.com/img/blogs/using-joypad.js-for-a-better-gaming-experience-on-the-web/1.png'
 ---
 
 ![](/img/blogs/using-joypad.js-for-a-better-gaming-experience-on-the-web/1.png)

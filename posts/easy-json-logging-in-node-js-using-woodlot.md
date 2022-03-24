@@ -2,6 +2,9 @@
 title: 'Easy JSON logging in Node JS using Woodlot'
 url: 'easy-json-logging-in-node-js-using-woodlot'
 date: 'Thu Apr 04 2019'
+metaDescription: "There are a lot of options available when it comes to choosing a tool for data logging in your Node JS application. At times you would find yourself switching back and forth between different tools just to get that perfect logger configuration set up properly for your project.   But of course, due to the instant availability of multiple open source JavaScript packages and tools (thanks to NPM) this doesn't only apply to loggers. It has spread across to almost every facet of JavaScript development now. But for the purpose of this blog post, let's just stick to Node JS data logging.   A common need while developing applications is to have your data logs get aggregated in an output file, instead of just getting logged to the console or the standard output stream (stdout). This makes it easy to resolve bugs faster, gain insights from the data being logged and maybe analyse it at a later stage.  For this very purpose we are required to use third-party data logging modules, and we'll be looking at one such open source module called Woodlot."
+metaKeywords: 'woodlot, json logging, nodejs, nodejs logger, data logging, expressjs, restify, middleware logger'
+metaImage: 'https://arunmichaeldsouza.com/img/blogs/easy-json-logging-in-node-js-using-woodlot/1.png'
 ---
 
 ![](/img/blogs/easy-json-logging-in-node-js-using-woodlot/1.png)

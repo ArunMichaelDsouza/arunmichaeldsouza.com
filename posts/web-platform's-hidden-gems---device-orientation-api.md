@@ -2,6 +2,9 @@
 title: "Web platform's hidden gems - Device Orientation API"
 url: "web-platform's-hidden-gems---device-orientation-api"
 date: 'Fri Sep 25 2020'
+metaDescription: "A few months back I started the Web platform's hidden gems blog series. The idea behind the series is to cover the native API enhancements to the web platform and shed some light on how these APIs can be used to create some really interesting experiences on the web.   Even though these APIs are in very early stages at the moment, they seem to be really promising and tend to provide an idea on how web development in the coming years would look like. Having said that, I feel that it's important for developers to know about these specifications and understand the possibilities that the native web has to offer!  This is the third blog post of the series and in this post, I'll be talking about the Device Orientation API."
+metaKeywords: 'orientation, gaming, orientation API, gesture recognition, game development, accessibility, device orientation, device motion, accelerometer, gyroscope, compass'
+metaImage: 'https://arunmichaeldsouza.com/img/blogs/web-platform's-hidden-gems---device-orientation-api/1.png'
 ---
 
 ![](/img/blogs/web-platform's-hidden-gems---device-orientation-api/1.png)

@@ -2,6 +2,9 @@
 title: 'Building the BRXLZ Liverpool FC Anfield Stadium'
 url: 'building-the-brxlz-liverpool-fc-anfield-stadium'
 date: 'Sat Nov 21 2020'
+metaDescription: "I've been a huge fan of construction toys since I was a kid, be it Lego, Duplo, Meccano, or Mechanix! I had them all and I never used to get tired of playing with them.  I don't mean to brag but I used to build some of the most interesting towers, houses, games, mini-cities, puzzles, and mazes, that too without any manuals or guides. Just pure imagination and creativity. Ah! those were the days.  Anyway, this isn't about me reminiscing about the fun times I had building those sets and playing with them. Rather It's about a new set that I got the chance to build (which is amazing by the way), and I want to share my experience here."
+metaKeywords: 'brxlz, lego, construction toy, construction set, lego building, lego creator, liverpool, lfc, liverpoolfc, anfield, stadium, anfield lego'
+metaImage: 'https://arunmichaeldsouza.com/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/1.jpg'
 ---
 
 ![](/img/blogs/building-the-brxlz-liverpool-fc-anfield-stadium/1.jpg)

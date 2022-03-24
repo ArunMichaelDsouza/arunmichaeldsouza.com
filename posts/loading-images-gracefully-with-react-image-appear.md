@@ -2,6 +2,9 @@
 title: 'Loading images gracefully with react-image-appear'
 url: 'loading-images-gracefully-with-react-image-appear'
 date: 'Fri Apr 26 2019'
+metaDescription: "Believe it or not, progressively loading images tend to degrade the overall user experience of a web application. And this can be more concerning for applications that rely heavily on high quality images. To fix this issue, a common technique is to display a placeholder image (for a short span) and replace it with the original image once it has loaded completely.  In this blog post we'll be looking at a React JS based component called react-image-appear, which applies this very same technique and helps in loading images smoothly!"
+metaKeywords: 'javascript, react, reactjs, image loading, smooth loading, lazy loading, react-image-appear, javascript development, javascript frameworks'
+metaImage: 'https://arunmichaeldsouza.com/img/blogs/loading-images-gracefully-with-react-image-appear/1.png'
 ---
 
 ![](/img/blogs/loading-images-gracefully-with-react-image-appear/1.png)
