@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "disqus-react": "^1.1.2",
     "gray-matter": "^4.0.3",
     "next": "12.1.0",
     "raw-loader": "^4.0.2",

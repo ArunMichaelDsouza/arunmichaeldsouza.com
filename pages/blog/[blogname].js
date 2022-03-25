@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
+import { DiscussionEmbed } from 'disqus-react';
 import Layout from '../../components/Layout';
 import SocialShare from '../../components/SocialShare';
 
@@ -9,6 +10,12 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
   const { title, url, metaDescription, metaKeywords, metaImage } = frontmatter;
   const pageTitle = `${title} | Arun Michael Dsouza`;
   const blogUrl = `https://arunmichaeldsouza.com/blog/${url}`;
+  const disqusShortname = 'arunmichaeldsouza';
+  const disqusConfig = {
+    url: blogUrl,
+    identifier: '',
+    title: pageTitle,
+  };
 
   if (!frontmatter) return <></>;
 
@@ -63,7 +70,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
           </div>
           <div id="disqus_thread"></div>
         </article>
-        <script type="text/javascript" src="/js/disqus.js"></script>
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
       </Layout>
     </>
   );
