@@ -70,7 +70,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
           </div>
           <div id="disqus_thread"></div>
         </article>
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        <script type="text/javascript" src="/js/disqus.js"></script>
       </Layout>
     </>
   );
