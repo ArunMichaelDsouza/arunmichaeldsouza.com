@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Head from 'next/head';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
-import { DiscussionEmbed } from 'disqus-react';
 import Layout from '../../components/Layout';
 import SocialShare from '../../components/SocialShare';
 
