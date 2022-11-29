@@ -88,11 +88,11 @@ const About = ({ title, description, ...props }) => {
           <section>
             <h2 className="page-secondary-title text-left">Work</h2>
             <p className="sub-text text-left lh">
-              Currently working as a Production Tools Programmer at{' '}
-              <a href="https://www.ubisoft.com/en-us/" target="_blank">
-                Ubisoft{' '}
+              Currently working as a Senior Software Engineer at{' '}
+              <a href="https://www.bloomberg.com/company" target="_blank">
+                Bloomberg{' '}
               </a>
-              (Québec), Canada.
+              in London, UK.
             </p>
           </section>
         </section>
