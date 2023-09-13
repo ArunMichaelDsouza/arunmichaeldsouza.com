@@ -55,7 +55,7 @@ const About = ({ title, description, ...props }) => {
                 </a>
                 .
               </p>
-              <p>
+              {/* <p>
                 Community leader for{' '}
                 <a href="https://www.meetup.com/React-Delhi-NCR/" target="_blank">
                   React Delhi-NCR
@@ -65,7 +65,7 @@ const About = ({ title, description, ...props }) => {
                   Open Source Delhi
                 </a>
                 .{' '}
-              </p>
+              </p> */}
               <p>Plays drums (occasionally), loves travelling, listening to rock music and playing video games.</p>
               <a target="_blank" href="https://github.com/ArunMichaelDsouza">
                 GitHub
