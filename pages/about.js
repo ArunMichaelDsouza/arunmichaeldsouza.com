@@ -49,11 +49,12 @@ const About = ({ title, description, ...props }) => {
             <div className="sub-text intro-text lh">
               <p>
                 Computer programmer from India currently building enterprise products for the web. Tech speaker, open
-                source software author and contributor. Creator of{' '}
+                source software author and contributor.
+                {/* Creator of{' '}
                 <a href="https://hyperpush.io/" target="_blank">
                   hyperpush.io
                 </a>
-                .
+                . */}
               </p>
               {/* <p>
                 Community leader for{' '}
