@@ -11,6 +11,16 @@ const Talks = ({ title, description, ...props }) => {
   const metaImage = 'https://arunmichaeldsouza.com/img/arun-michael-dsouza.png';
   const talks = [
     {
+      eventDate: 'September 2023',
+      videoUrl: 'https://portal.gitnation.org/contents/using-the-gamepad-api-for-a-better-gaming-experience-on-the-web',
+      title: 'Using the Gamepad API for a Better Gaming Experience on the Web',
+      slidesUrl:
+        'https://speakerdeck.com/arunmichaeldsouza/using-the-gamepad-api-for-a-better-gaming-experience-on-the-web-b74f2775-6e5d-4d22-8983-124ad208305e',
+      eventName: 'JS GameDev Summit 2023',
+      location: 'Online',
+      eventUrl: 'https://portal.gitnation.org/events/js-gamedev-summit-2023',
+    },
+    {
       eventDate: 'August 2020',
       videoUrl: 'https://youtu.be/zqFubo31HGY?t=22045',
       title: 'Using the Gamepad API for a better gaming experience on the web',
