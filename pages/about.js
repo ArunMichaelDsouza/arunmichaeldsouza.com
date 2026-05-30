@@ -90,8 +90,8 @@ const About = ({ title, description, ...props }) => {
             <h2 className="page-secondary-title text-left">Work</h2>
             <p className="sub-text text-left lh">
               Currently working as a Senior Software Engineer at{' '}
-              <a href="https://www.bloomberg.com/company" target="_blank">
-                Bloomberg{' '}
+              <a href="https://www.mapbox.com/" target="_blank">
+                Mapbox{' '}
               </a>
               in London, UK.
             </p>
